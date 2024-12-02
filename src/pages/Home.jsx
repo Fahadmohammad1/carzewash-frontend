@@ -2,9 +2,11 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <h1 className="text-red-500">helllo nigga this is your home</h1>
-    </div>
+    <section>
+      <h1 className="text-red-500 text-7xl">
+        This is RAB... niggar baccha dorja khol
+      </h1>
+    </section>
   );
 };
 

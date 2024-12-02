@@ -22,7 +22,7 @@ const Banner = () => {
           notre expertise et des produits de qualité, nous assurons que votre
           véhicule retrouve son éclat d’origine à chaque lavage.
         </p>
-        <div className="flex gap-x-[18px] mt-[32px]">
+        <div className="flex gap-x-[18px] mt-[32px] items-center">
           <div className="flex">
             <img
               src={avatar1}
@@ -40,13 +40,13 @@ const Banner = () => {
               alt="image"
             />
           </div>
-          <div className="flex flex-col">
-            <span className="text-[28px] text-cw-primary leading-[28px] font-black">
+          <div className="flex flex-col justify-center">
+            <p className="text-[28px] text-cw-primary leading-[28px] font-black">
               100+
-            </span>{" "}
-            <span className="text-base leading-[28px] font-normal">
+            </p>{" "}
+            <p className="text-base leading-[28px] font-normal">
               Clients satisfaits
-            </span>
+            </p>
           </div>
         </div>
         <button className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md flex items-center gap-x-[16px]">
@@ -57,6 +57,31 @@ const Banner = () => {
             <GoArrowRight />
           </span>
         </button>
+      </div>
+      <div className="mt-10">
+        <img src={blackCar} className="rounded-xl" alt="car image" />
+        <div className="my-3 flex justify-between">
+          <img
+            src={wahsingCar1}
+            className="rounded-[4px] w-[74px]"
+            alt="car image"
+          />
+          <img
+            src={insideCar1}
+            className="rounded-[4px] w-[74px]"
+            alt="car image"
+          />
+          <img
+            src={wahsingCar2}
+            className="rounded-[4px] w-[74px]"
+            alt="car image"
+          />
+          <img
+            src={insideCar2}
+            className="rounded-[4px] w-[74px]"
+            alt="car image"
+          />
+        </div>
       </div>
     </section>
   );

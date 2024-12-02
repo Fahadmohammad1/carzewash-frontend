@@ -4,12 +4,10 @@ import Navbar from "../shared/Navbar";
 
 const MainLayout = () => {
   return (
-    <>
+    <div className="px-5">
       <Navbar />
-      <div className="px-5">
-        <Outlet />
-      </div>
-    </>
+      <Outlet />
+    </div>
   );
 };
 

@@ -11,7 +11,7 @@ export default {
         'cw-secondary': "#0E252F",
       },
       fontFamily: {
-        'primary': ['"CreatoDisplay-Black"']
+        'cw-primary': ['"CreatoDisplay-Black"']
       },
       animation: {
         slide: "slide 20s linear infinite",

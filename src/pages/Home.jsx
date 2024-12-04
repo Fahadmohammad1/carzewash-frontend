@@ -4,6 +4,7 @@ import BookingForm from "../components/home/BookingForm";
 import Services from "../components/home/Services";
 import Quality from "../components/home/Quality";
 import QualityBanner from "../components/home/QualityBanner";
+import HowItWorks from "../components/home/HowItWorks";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Services />
       <Quality />
       <QualityBanner />
+      <HowItWorks />
     </>
   );
 };

@@ -12,15 +12,19 @@ import Benifits from "../components/home/Benifits";
 const Home = () => {
   return (
     <>
-      <Banner />
-      <BookingForm />
-      <Services />
-      <Quality />
+      <div className="px-5">
+        <Banner />
+        <BookingForm />
+        <Services />
+        <Quality />
+      </div>
       <QualityBanner />
-      <HowItWorks />
-      <Packages />
-      <Review />
-      <Benifits />
+      <div className="px-5">
+        <HowItWorks />
+        <Packages />
+        <Review />
+        <Benifits />
+      </div>
     </>
   );
 };

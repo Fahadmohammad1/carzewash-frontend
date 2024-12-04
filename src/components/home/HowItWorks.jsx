@@ -38,8 +38,11 @@ const HowItWorks = () => {
         former glory.
       </p>
       {userGuides.map((guide) => (
-        <div className="card bg-base-100 w-full shadow-xl mt-8 px-6 py-8">
-          <div key={guide.id} className="">
+        <div
+          key={guide.id}
+          className="card bg-base-100 w-full shadow-xl mt-8 px-6 py-8"
+        >
+          <div className="">
             <div className="bg-cw-primary p-[27px] rounded-full max-w-fit">
               <img src={guide.icon} alt="" />
             </div>

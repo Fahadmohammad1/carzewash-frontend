@@ -5,6 +5,7 @@ import Services from "../components/home/Services";
 import Quality from "../components/home/Quality";
 import QualityBanner from "../components/home/QualityBanner";
 import HowItWorks from "../components/home/HowItWorks";
+import Packages from "../components/home/Packages";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Quality />
       <QualityBanner />
       <HowItWorks />
+      <Packages />
     </>
   );
 };

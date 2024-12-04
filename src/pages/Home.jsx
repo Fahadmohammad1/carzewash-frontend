@@ -6,6 +6,8 @@ import Quality from "../components/home/Quality";
 import QualityBanner from "../components/home/QualityBanner";
 import HowItWorks from "../components/home/HowItWorks";
 import Packages from "../components/home/Packages";
+import Review from "../components/home/Review";
+import Benifits from "../components/home/Benifits";
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
       <QualityBanner />
       <HowItWorks />
       <Packages />
+      <Review />
+      <Benifits />
     </>
   );
 };

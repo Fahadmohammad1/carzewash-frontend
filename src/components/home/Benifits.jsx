@@ -29,13 +29,18 @@ const Benifits = () => {
   ];
   return (
     <section className="mt-[60px]">
-      <h1 className="text-[30px] leading-[42px] font-black text-center">
+      <h1 className="text-[30px] leading-[42px] font-black text-center md:hidden">
         <span className="text-cw-secondary">
           Dites adieu aux saletés, bonjour à la
         </span>{" "}
         <span className="text-cw-primary">propreté!</span>
       </h1>
-      <div>
+      <h1 className="text-[36px] leading-[52px] font-black text-center hidden md:block">
+        <span className="text-cw-secondary">Dites adieu aux saletés,</span>
+        <br />
+        <span className="text-cw-primary"> bonjour à la propreté!</span>
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-5">
         {benifits.map((b) => (
           <div
             key={b.id}

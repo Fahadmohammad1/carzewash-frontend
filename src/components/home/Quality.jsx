@@ -6,10 +6,11 @@ import comparingCar from "../../assets/sponsors/comparing-car.png";
 const Quality = () => {
   return (
     <section className="mt-[60px]">
-      <h1 className="font-black text-[28px] leading-[42px] text-cw-secondary text-center">
-        Soins de voiture de qualité à chaque fois
+      <h1 className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center md:px-28">
+        <span className="text-cw-secondary">Soins de voiture de qualité</span>{" "}
+        <span className="text-cw-primary">à chaque fois</span>
       </h1>
-      <p className="text-center leading-6">
+      <p className="text-center leading-6 md:px-20">
         Notre mission est de fournir un service constant et impeccable, en
         assurant que votre voiture reste propre et éclatante à chaque visite.
         Faites-nous confiance pour prendre soin de votre véhicule avec un
@@ -26,8 +27,8 @@ const Quality = () => {
           </span>
         </button>
       </div>
-      <div className="flex justify-center">
-        <img src={comparingCar} alt="car" />
+      <div className="flex justify-center md:px-20">
+        <img className="md:w-full" src={comparingCar} alt="car" />
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ const LogoSlider = () => {
   ];
 
   return (
-    <div className="relative w-full max-w-md overflow-hidden p-4 rounded-lg">
+    <div className="relative w-full max-w-xl mx-auto overflow-hidden p-4 rounded-lg">
       <div className="flex w-max animate-slide gap-8">
         {logos.concat(logos).map((logo, index) => (
           <div

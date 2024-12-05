@@ -62,7 +62,7 @@ const Packages = () => {
   ];
   return (
     <section className="mt-[60px] pt-10">
-      <h1 className="font-black text-[28px] leading-[42px] text-center">
+      <h1 className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center md:px-10">
         <span className="text-cw-secondary">Noo Tarifs & Formules</span>{" "}
         <span className="text-cw-primary">Détaillements</span>
       </h1>

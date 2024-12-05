@@ -29,13 +29,13 @@ const HowItWorks = () => {
   ];
   return (
     <section className="mt-[60px]">
-      <h1 className="font-black text-[28px] leading-[42px] text-center p-7">
+      <h1 className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center p-7 md:px-20">
         <span className="text-cw-secondary">Comment ça fonctionne pour</span>{" "}
         <span className="text-cw-primary">faire briller la voiture</span>
       </h1>
-      <p className="text-center leading-6">
-        Discover our simple and effective process to restore your car to its
-        former glory.
+      <p className="text-center leading-6 md:px-28">
+        Découvrez notre processus simple et efficace pour redonner à votre
+        voiture tout son éclat.
       </p>
       {userGuides.map((guide) => (
         <div

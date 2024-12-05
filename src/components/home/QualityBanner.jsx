@@ -3,8 +3,8 @@ import { GoArrowRight } from "react-icons/go";
 
 const QualityBanner = () => {
   return (
-    <section className="bg-cw-secondary pt-[50px] pb-8 px-5 text-base-300">
-      <h1 className="font-black text-[28px] leading-[42px] text-white text-center">
+    <section className="bg-cw-secondary pt-[50px] pb-8 px-5 text-base-300 md:px-[74px]">
+      <h1 className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-white text-center md:px-20">
         Parce que votre voiture mérite un bain
       </h1>
       <p className="text-center leading-6">

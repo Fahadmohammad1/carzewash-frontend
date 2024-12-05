@@ -3,7 +3,7 @@ import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
-    <section className="navbar mb-[40px] mt-6 px-5">
+    <section className="navbar mb-[40px] mt-6 px-5 md:px-10">
       <div className="flex-1">
         <img src={logo} className="w-[67px]" alt="logo" />
       </div>

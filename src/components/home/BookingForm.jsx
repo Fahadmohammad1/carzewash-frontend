@@ -7,7 +7,7 @@ import clock from "../../assets/bookingForm/clock.png";
 
 const BookingForm = () => {
   return (
-    <section className="mt-[26px] border-[2px] rounded-xl">
+    <section className="mt-[26px] md:mt-[60px] border-[2px] rounded-xl">
       <div className="px-5 py-8 flex flex-col gap-y-3">
         <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] ">
           <img src={user} alt="" />

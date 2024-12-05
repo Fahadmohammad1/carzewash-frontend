@@ -12,12 +12,12 @@ import date from "../assets/bookingForm/date.png";
 
 const Contact = () => {
   return (
-    <section>
+    <section className="md:px-10">
       <h1 className="font-black text-[28px] leading-[42px] text-center mt-[47px] mb-8 px-10">
         <span className="text-cw-secondary">Contact avec</span>{" "}
         <span className="text-cw-primary">Carzewash</span>
       </h1>
-      <div className="bg-cw-secondary px-5 py-10">
+      <div className="bg-cw-secondary px-5 py-10 md:rounded-xl">
         <h2 className="text-[28px] leading-[42px] font-medium text-white">
           Nous sommes engagés Pour vous aider
         </h2>
@@ -43,7 +43,7 @@ const Contact = () => {
         </div>
       </div>
       <div>
-        <div className="px-5 py-8 flex flex-col gap-y-4">
+        <div className="px-5 md:px-0 py-8 flex flex-col gap-y-4 md:gap-y-6">
           <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] ">
             <img src={user} alt="" />
             <input
@@ -54,26 +54,28 @@ const Contact = () => {
               placeholder="Votre nom complet"
             />
           </label>
-          <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px]">
-            <img src={phone2} alt="" />
-            <input
-              type="text"
-              className="border-0"
-              name="phone"
-              id="phone"
-              placeholder="téléphone"
-            />
-          </label>
-          <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px]">
-            <img src={car} alt="" />
-            <input
-              type="email"
-              className="border-0"
-              name="email"
-              id="email"
-              placeholder="Adresse email"
-            />
-          </label>
+          <div className="flex flex-col gap-y-4 md:gap-y-6 md:flex-row md:gap-x-5">
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] md:w-full">
+              <img src={phone2} alt="" />
+              <input
+                type="text"
+                className="border-0"
+                name="phone"
+                id="phone"
+                placeholder="téléphone"
+              />
+            </label>
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] md:w-full">
+              <img src={car} alt="" />
+              <input
+                type="email"
+                className="border-0"
+                name="email"
+                id="email"
+                placeholder="Adresse email"
+              />
+            </label>
+          </div>
           <textarea
             className="rounded-[10px] border-[1px] pt-3 pb-10 px-[18px]"
             name="message"

@@ -6,3 +6,8 @@
   font-family: "CREATO";
   src: url("/public/fonts/CreatoDisplay-Black.otf");
 }
+
+@font-face {
+  font-family: "CREATO REGULAR";
+  src: url("/public/fonts/CreatoDisplay-Regular.otf");
+}

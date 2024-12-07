@@ -3,9 +3,9 @@ import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
-    <section className="navbar mb-[40px] mt-6 px-5 md:px-10">
+    <section className="navbar mb-[40px] mt-6 px-5 md:px-10 lg:px-[104px]">
       <div className="flex-1">
-        <img src={logo} className="w-[67px]" alt="logo" />
+        <img src={logo} className="w-[67px] lg:w-[110px]" alt="logo" />
       </div>
       <div className="flex-none lg:hidden">
         <div className="dropdown dropdown-end">

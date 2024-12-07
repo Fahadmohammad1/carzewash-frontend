@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Pricing from "../pages/Pricing";
 import Booking from "../pages/Booking";
 import Contact from "../pages/Contact";
+import DashboardLayout from "../components/layout/DashboardLayout";
+import BookingList from "../pages/dashboard/BookingList";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +27,17 @@ export const router = createBrowserRouter([
       {
         path: "/booking",
         element: <Booking />,
+      },
+    ],
+  },
+
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        index: true,
+        element: <BookingList />,
       },
     ],
   },

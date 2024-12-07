@@ -12,14 +12,14 @@ import Benifits from "../components/home/Benifits";
 const Home = () => {
   return (
     <>
-      <div className="px-5 md:px-10">
+      <div className="px-5 md:px-10 lg:px-[104px]">
         <Banner />
         <BookingForm />
         <Services />
         <Quality />
       </div>
       <QualityBanner />
-      <div className="px-5 md:px-10">
+      <div className="px-5 md:px-10 lg:px-[104px]">
         <HowItWorks />
         <Packages />
         <Review />

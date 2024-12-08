@@ -33,7 +33,7 @@ const BookingList = () => {
   if (loading) {
     return <p>Loading....</p>;
   }
-  console.log(bookings);
+
   return (
     <section>
       <div className="overflow-x-auto">
@@ -68,7 +68,7 @@ const BookingList = () => {
           </thead>
           <tbody>
             {/* row 1 */}
-            {bookings.length &&
+            {bookings?.length &&
               bookings?.map((booking) => (
                 <tr key={booking.id}>
                   <th>

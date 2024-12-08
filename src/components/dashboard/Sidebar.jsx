@@ -5,6 +5,7 @@ import { Outlet } from "react-router";
 import avatar from "../../assets/user-avatar.svg";
 import arrow from "../../assets/arrow-icon.svg";
 import { CiUser } from "react-icons/ci";
+import UpdatePassModal from "./UpdatePassModal";
 
 const Sidebar = () => {
   return (
@@ -63,6 +64,19 @@ const Sidebar = () => {
               <FaUsers /> Contact List
             </a>
           </li>
+
+          <div className="mt-auto mb-24 mx-auto">
+            <button className="px-[54px] py-[18px] bg-[#6AB4D44D] mx-[30px] rounded-[12px]">
+              Logout
+            </button>
+            <button
+              onClick={() => document.getElementById("update_pass").showModal()}
+              className="px-[54px] py-[18px] bg-[#6AB4D44D] mx-[30px] rounded-[12px]"
+            >
+              Update Password
+            </button>
+            <UpdatePassModal />
+          </div>
         </ul>
       </div>
     </div>

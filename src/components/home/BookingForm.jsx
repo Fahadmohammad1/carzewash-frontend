@@ -204,7 +204,10 @@ const BookingForm = () => {
         <p className="mb-8 text-gray-400 italic">
           Vous serez contacté dans les plus brefs délais
         </p>
-        <button className="px-[51px] py-[17px] bg-cw-primary rounded-md">
+        <button
+          type="submit"
+          className="px-[51px] py-[17px] bg-cw-primary rounded-md"
+        >
           Réservation
         </button>
       </form>

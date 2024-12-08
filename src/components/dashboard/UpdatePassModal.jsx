@@ -38,15 +38,11 @@ const UpdatePassModal = () => {
         }
       );
 
-      console.log(res);
-
       if (res.ok) {
         toast.success("Updated Successfully");
       } else {
         toast.error("Failed to update");
       }
-
-      const result = await res.json();
     } catch (err) {
       setError(err.message);
       toast.error(err.message);

@@ -1,13 +1,14 @@
 import React from "react";
 import { FaUsers } from "react-icons/fa";
 import { GoChecklist } from "react-icons/go";
-import { Outlet } from "react-router";
+import { Link, Outlet, useNavigate } from "react-router";
 import avatar from "../../assets/user-avatar.svg";
 import arrow from "../../assets/arrow-icon.svg";
 import { CiUser } from "react-icons/ci";
 import UpdatePassModal from "./UpdatePassModal";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -54,24 +55,36 @@ const Sidebar = () => {
           <p className="text-[46px] leading-[54px] text-center pt-10 pb-9 font-cw-regular">
             Admin
           </p>
-          <li className="text-black bg-cw-primary">
-            <a className="mx-auto font-cw-regular">
+          <li>
+            <Link
+              to="/dashboard"
+              className="font-cw-regular w-full rounded-none flex justify-center bg-cw-primary"
+            >
               <GoChecklist /> Booking List
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="mx-auto font-cw-regular">
+            <Link
+              to="/dashboard/contact"
+              className="font-cw-regular w-full rounded-none flex justify-center"
+            >
               <FaUsers /> Contact List
-            </a>
+            </Link>
           </li>
 
           <div className="mt-auto mb-24 mx-auto">
-            <button className="px-[54px] py-[18px] bg-[#6AB4D44D] mx-[30px] rounded-[12px]">
+            <button
+              onClick={() => {
+                localStorage.removeItem("admin");
+                navigate("/");
+              }}
+              className="px-[54px] py-[18px] bg-[#6AB4D44D] mx-[30px] rounded-[12px]"
+            >
               Logout
             </button>
             <button
               onClick={() => document.getElementById("update_pass").showModal()}
-              className="px-[54px] py-[18px] bg-[#6AB4D44D] mx-[30px] rounded-[12px]"
+              className="text-white mt-2"
             >
               Update Password
             </button>

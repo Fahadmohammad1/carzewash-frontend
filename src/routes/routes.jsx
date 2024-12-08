@@ -6,6 +6,9 @@ import Booking from "../pages/Booking";
 import Contact from "../pages/Contact";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import BookingList from "../pages/dashboard/BookingList";
+import ContactList from "../pages/dashboard/ContactList";
+import Login from "../pages/Login";
+import RequireAuth from "../components/dashboard/RequireAuth";
 
 export const router = createBrowserRouter([
   {
@@ -32,12 +35,25 @@ export const router = createBrowserRouter([
   },
 
   {
+    path: "/login",
+    element: <Login />,
+  },
+
+  {
     path: "/dashboard",
-    element: <DashboardLayout />,
+    element: (
+      <RequireAuth>
+        <DashboardLayout />
+      </RequireAuth>
+    ),
     children: [
       {
         index: true,
         element: <BookingList />,
+      },
+      {
+        path: "/dashboard/contact",
+        element: <ContactList />,
       },
     ],
   },

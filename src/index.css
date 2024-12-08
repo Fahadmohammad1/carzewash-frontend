@@ -8,6 +8,11 @@
 }
 
 @font-face {
+  font-family: "CREATO MEDIUM";
+  src: url("/public/fonts/CreatoDisplay-Medium.otf");
+}
+
+@font-face {
   font-family: "CREATO REGULAR";
   src: url("/public/fonts/CreatoDisplay-Regular.otf");
 }

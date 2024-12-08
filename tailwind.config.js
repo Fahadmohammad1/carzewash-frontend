@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         'cw-primary': ['CREATO', 'cursive'],
+        'cw-medium': ['CREATO MEDIUM', 'mono'],
         'cw-regular': ['CREATO REGULAR', 'sans serif']
       },
       animation: {

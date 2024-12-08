@@ -18,7 +18,9 @@ const Home = () => {
         <Services />
         <Quality />
       </div>
-      <QualityBanner />
+      <div className="lg:px-[104px]">
+        <QualityBanner />
+      </div>
       <div className="px-5 md:px-10 lg:px-[104px]">
         <HowItWorks />
         <Packages />

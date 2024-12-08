@@ -28,26 +28,26 @@ const Benifits = () => {
     },
   ];
   return (
-    <section className="mt-[60px]">
+    <section className="mt-[60px] lg:mt-[120px]">
       <h1 className="text-[30px] leading-[42px] font-black text-center md:hidden">
         <span className="text-cw-secondary">
           Dites adieu aux saletés, bonjour à la
         </span>{" "}
         <span className="text-cw-primary">propreté!</span>
       </h1>
-      <h1 className="text-[36px] leading-[52px] font-black text-center hidden md:block">
+      <h1 className="text-[36px] leading-[52px] font-black text-center hidden md:block lg:text-[52px] lg:leading-[68px] font-cw-primary">
         <span className="text-cw-secondary">Dites adieu aux saletés,</span>
         <br />
         <span className="text-cw-primary"> bonjour à la propreté!</span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-5 lg:grid-cols-4 lg:gap-x-5">
         {benifits.map((b) => (
           <div
             key={b.id}
-            className="mt-8 px-[60px] py-8 shadow rounded-[10px] mb-10"
+            className="mt-8 px-[60px] lg:px-9 py-8 shadow rounded-[10px] mb-10"
           >
-            <img className="mx-auto" src={b.icon} alt="icon" />
-            <h4 className="text-cw-secondary font-bold text-[32px] leading-[44px] mt-5 text-center">
+            <img className="mx-auto lg:mx-0" src={b.icon} alt="icon" />
+            <h4 className="text-cw-secondary font-bold text-[32px] leading-[44px] mt-5 text-center lg:text-start">
               {b.title}
             </h4>
           </div>

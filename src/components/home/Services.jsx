@@ -52,22 +52,23 @@ const Services = () => {
   ];
   return (
     <section className="mt-[60px]">
-      <h1 className="text-[28px] leading-[42px] md:text-4xl md:leading-[52px] font-black text-center mb-3 md:px-[155px]">
-        <span className="text-cw-secondary">Apportant de l’éclat</span>{" "}
+      <h1 className="text-[28px] leading-[42px] md:text-4xl lg:text-[52px] md:leading-[52px] lg:leading-[80px] lg:tracking-wide font-black text-center mb-3 md:px-[155px] lg:font-cw-primary">
+        <span className="text-cw-secondary">Apportant de l’éclat</span>
+        <br />
         <span className="text-cw-primary">pour votre voiture</span>
       </h1>
-      <p className="text-base leading-6 text-center mb-12 md:px-16">
+      <p className="text-base leading-6 text-center mb-12 md:px-16 lg:px-60">
         Nous offrons des services de nettoyage et d’entretien conçus pour
         restaurer l’apparence et la propreté de votre véhicule, en mettant
         l’accent sur la qualité et la satisfaction du client.
       </p>
-      <div className="grid grid-cols-1 gap-y-8 md:hidden">
+      <div className="grid grid-cols-1 lg:grid lg:grid-cols-3 lg:gap-x-10 gap-y-8 md:hidden">
         {services?.map((service) => (
           <Service key={service.id} service={service} />
         ))}
       </div>
-      <Carousel
-        className="hidden md:block"
+      {/* <Carousel
+        className="lg:hidden"
         swipeable={true}
         draggable={true}
         responsive={responsive}
@@ -84,7 +85,7 @@ const Services = () => {
         {services?.map((service) => (
           <Service key={service.id} service={service} />
         ))}
-      </Carousel>
+      </Carousel> */}
     </section>
   );
 };

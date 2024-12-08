@@ -1,10 +1,11 @@
 import React from "react";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
     <section className="navbar mb-[40px] mt-6 px-5 md:px-10 lg:px-[104px]">
-      <div className="flex-1">
+      <div className="flex-1 lg:flex-none">
         <img src={logo} className="w-[67px] lg:w-[110px]" alt="logo" />
       </div>
       <div className="flex-none lg:hidden">
@@ -42,6 +43,24 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="navbar-center hidden lg:flex mx-auto">
+        <ul className="menu menu-horizontal px-1">
+          <li className="text-cw-primary font-medium text-[20px] leading-[23px]">
+            <Link to="/">Accueil</Link>
+          </li>
+          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary opacity-40">
+            <Link to="/pricing">Tarification</Link>
+          </li>
+          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary opacity-40">
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-end hidden lg:flex w-fit">
+        <button className="px-[51px] py-[17px] bg-cw-primary rounded-lg">
+          Réservation
+        </button>
       </div>
     </section>
   );

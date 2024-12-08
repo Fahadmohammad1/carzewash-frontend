@@ -1,5 +1,6 @@
 import React from "react";
 import blackCar from "../../assets/banner/black-car.png";
+import blackCar3 from "../../assets/banner/black-car.jpeg";
 import blackCar2 from "../../assets/banner/black-car2.png";
 import wahsingCar1 from "../../assets/banner/washing-car-1.png";
 import insideCar1 from "../../assets/banner/inside-car-1.png";
@@ -13,14 +14,13 @@ import { GoArrowRight } from "react-icons/go";
 const Banner = () => {
   return (
     <section>
-      <div className="lg:grid grid-cols-2 gap-2">
-        {/* Left Side */}
-        <div className="px-4">
+      <div className="lg:grid grid-cols-2 gap-x-5">
+        <div>
           <h1 className="text-[30px] md:text-[52px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
             <span className="text-cw-primary">Nous aimons faire</span>{" "}
             <span className="text-cw-secondary">Briller votre voiture</span>
           </h1>
-          <p className="text-base leading-[24px] mt-[16px]">
+          <p className="text-base leading-[24px] mt-[12px]">
             Nous croyons que chaque voiture mérite de briller comme neuve. Avec
             notre expertise et des produits de qualité, nous assurons que votre
             véhicule retrouve son éclat d’origine à chaque lavage.
@@ -64,16 +64,17 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* Right Side */}
         <div className="relative flex justify-center lg:justify-start">
-          <div className="relative lg:flex">
-            {/* Main Image */}
+          <div className="relative lg:flex gap-x-5">
             <div className="">
-              <img src={blackCar2} className="rounded-xl" alt="black car" />
+              <img
+                src={blackCar3}
+                className="rounded-xl h-full lg:w-[500px]"
+                alt="black car"
+              />
             </div>
 
-            {/* Mini Images */}
-            <div className="hidden lg:flex flex-col gap-5 absolute right-[-90px] top-0">
+            <div className="flex lg:flex-col gap-y-6">
               <img
                 src={wahsingCar1}
                 className="rounded-[4px] w-[74px] md:w-[120px]"

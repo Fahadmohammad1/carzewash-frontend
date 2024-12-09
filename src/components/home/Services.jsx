@@ -3,27 +3,19 @@ import Service from "./Service";
 import service1 from "../../assets/service/service-1.png";
 import service2 from "../../assets/service/service-2.png";
 import service3 from "../../assets/service/service-3.png";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Services = () => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 475, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
   };
+
   const services = [
     {
       id: 1,
@@ -62,30 +54,18 @@ const Services = () => {
         restaurer l’apparence et la propreté de votre véhicule, en mettant
         l’accent sur la qualité et la satisfaction du client.
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10 gap-y-8 overflow-x-scroll md:flex md:justify-center md:items-center md:gap-x-10 md:w-full">
+      <div className="grid grid-cols-1 lg:grid lg:grid-cols-3 lg:gap-x-10 gap-y-8 md:hidden">
         {services?.map((service) => (
           <Service key={service.id} service={service} />
         ))}
       </div>
-      {/* <Carousel
-        className="lg:hidden"
-        swipeable={true}
-        draggable={true}
-        responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
-        infinite={true}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
-      >
-        {services?.map((service) => (
-          <Service key={service.id} service={service} />
-        ))}
-      </Carousel> */}
+      <div className="slider-container hidden md:block lg:hidden">
+        <Slider className="" {...settings}>
+          {services?.map((service) => (
+            <Service key={service.id} service={service} />
+          ))}
+        </Slider>
+      </div>
     </section>
   );
 };

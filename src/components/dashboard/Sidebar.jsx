@@ -6,6 +6,7 @@ import avatar from "../../assets/user-avatar.svg";
 import arrow from "../../assets/arrow-icon.svg";
 import { CiUser } from "react-icons/ci";
 import UpdatePassModal from "./UpdatePassModal";
+import logout from "../../assets/logout.svg";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -13,10 +14,47 @@ const Sidebar = () => {
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        <div className="lg:h-[100px] flex items-center justify-center border-b">
+        <div className="lg:h-[100px] lg:flex items-center justify-center border-b hidden">
           <h3 className="font-normal text-[32px]">Hello, Mourad</h3>
         </div>
-        <div className="px-[60px] pt-[60px] bg-[#F5F5F9]">
+        <div className="lg:hidden">
+          <div className="flex px-5 justify-between pt-[60px] pb-10">
+            <div>
+              <h3 className="text-[32px] leading-[38px] font-cw-regular">
+                Hello,
+                <br />
+                Mourad
+              </h3>
+            </div>
+            <div
+              onClick={() => {
+                localStorage.removeItem("admin");
+                navigate("/");
+              }}
+              className="bg-cw-secondary p-5 ml-auto h-fit my-auto rounded-md cursor-pointer"
+            >
+              <img src={logout} alt="logout icon" />
+            </div>
+          </div>
+          <div className="py-10 bg-cw-secondary">
+            <p className="text-[46px] text-white leading-[54px] font-cw-regular text-center mb-48px">
+              Admin
+            </p>
+            <div className="flex gap-x-6 justify-center mt-12">
+              <span className="p-4 rounded-lg bg-cw-primary">
+                <Link to="/dashboard">
+                  <GoChecklist className="text-white text-[18px]" />
+                </Link>
+              </span>
+              <span className="p-4 rounded-lg bg-cw-primary">
+                <Link to="/dashboard/contact">
+                  <FaUsers className="text-white text-[18px]" />
+                </Link>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="lg:px-[60px] lg:pt-[60px] px-5 lg:bg-[#F5F5F9]">
           <div className="flex gap-x-[60px]">
             <div className="flex items-center">
               <img
@@ -34,16 +72,10 @@ const Sidebar = () => {
             </div>
           </div>
           <p className="bg-cw-primary px-[14px] py-[10px] font-cw-regular flex items-center gap-x-2 text-white max-w-fit border rounded-lg my-10">
-            <CiUser className="text-lg" /> 15 Users Booking
+            <CiUser className="text-lg" /> Users Booking
           </p>
           <Outlet />
         </div>
-        <label
-          htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
-        </label>
       </div>
       <div className="drawer-side">
         <label
@@ -72,19 +104,19 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          <div className="mt-auto mb-24 mx-auto">
+          <div className="mt-auto mb-24 mx-auto lg:flex flex-col">
             <button
               onClick={() => {
                 localStorage.removeItem("admin");
                 navigate("/");
               }}
-              className="px-[54px] py-[18px] bg-[#6AB4D44D] mx-[30px] rounded-[12px]"
+              className="px-[54px] py-[18px] bg-[#6AB4D44D] rounded-[12px]"
             >
               Logout
             </button>
             <button
               onClick={() => document.getElementById("update_pass").showModal()}
-              className="text-white mt-2"
+              className="text-white mt-2 mx-auto w-full"
             >
               Update Password
             </button>

@@ -4,10 +4,10 @@ const Service = ({ service }) => {
   return (
     <div
       style={{ boxShadow: "0px 10px 20px 0px #3C98CC26" }}
-      className={`px-[13px] py-[18px] rounded-[20px] shadow-md ${service.bgColor} md:min-w-[384px]`}
+      className={`px-[13px] py-[18px] rounded-[20px] shadow-md ${service.bgColor} md:max-w-[384px] md:mx-5 lg:mx-0`}
     >
       <img
-        className="rounded-xl w-full mb-5"
+        className="rounded-xl w-full mb-5 md:[352px]"
         src={service.image}
         alt="car wash"
       />

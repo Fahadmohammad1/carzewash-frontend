@@ -1,10 +1,10 @@
 import React from "react";
-import service1 from "../../assets/service/service-1.png";
 
 const Service = ({ service }) => {
   return (
     <div
-      className={`px-[13px] py-[18px] rounded-[20px] shadow-md ${service.bgColor}`}
+      style={{ boxShadow: "0px 10px 20px 0px #3C98CC26" }}
+      className={`px-[13px] py-[18px] rounded-[20px] shadow-md ${service.bgColor} md:min-w-[384px]`}
     >
       <img
         className="rounded-xl w-full mb-5"

@@ -1,5 +1,6 @@
 import React from "react";
-import arrow from "../../assets/arrow.png";
+import arrow from "../../assets/right-arrow1.svg";
+import arrow2 from "../../assets/right-arrow2.svg";
 import { GoArrowRight } from "react-icons/go";
 
 const Packages = () => {
@@ -7,9 +8,7 @@ const Packages = () => {
     {
       id: 1,
       price: 50,
-      textColor: "text-cw-secondary",
-      priceColor: "text-cw-primary",
-      bgColor: "bg-base-100",
+      position: "",
       title: "Formule Classique",
       type: "Forfait Argent",
       details: [
@@ -23,9 +22,7 @@ const Packages = () => {
     {
       id: 2,
       price: 90,
-      textColor: "text-white",
-      priceColor: "text-white",
-      bgColor: "bg-cw-primary",
+      position: "middle",
       title: "Formule Premium",
       type: "Forfait Gold",
       details: [
@@ -44,9 +41,7 @@ const Packages = () => {
     {
       id: 3,
       price: 190,
-      textColor: "text-cw-secondary",
-      priceColor: "text-cw-primary",
-      bgColor: "bg-base-100",
+      position: "",
       title: "Formule Prestige",
       type: "Forfait Platine",
       details: [
@@ -76,42 +71,70 @@ const Packages = () => {
         {packages.map((p) => (
           <div
             key={p.id}
-            className={`card w-full shadow-xl mt-8 px-5 ${p.bgColor}`}
+            className={`card w-full shadow-xl mt-8 px-5 ${
+              p.position === "middle" ? "bg-cw-primary" : ""
+            }`}
           >
             <div className="">
               <h2
-                className={`font-extrabold text-[32px] leading-[38px] mt-10 ${p.textColor}`}
+                className={`font-extrabold text-[32px] leading-[38px] mt-10 ${
+                  p.position === "middle" ? "text-white" : "text-cw-secondary"
+                }`}
               >
                 {p.title}
               </h2>
-              <p className="leading-6 text-base text-gray-500">{p.type}</p>
               <p
-                className={`mt-8 mb-16 text-[64px] leading-[68px] font-black ${p.priceColor}`}
+                className={`leading-6 text-base opacity-50 ${
+                  p.position === "middle" ? "text-white" : "text-cw-secondary"
+                }`}
+              >
+                {p.type}
+              </p>
+              <p
+                className={`mt-8 mb-16 text-[64px] leading-[68px] font-black ${
+                  p.position === "middle" ? "text-white" : "text-cw-primary"
+                }`}
               >
                 €{p.price}
               </p>
             </div>
-            <div className="flex flex-col gap-y-4">
+            <div className="flex flex-col gap-y-4 lg:mb-[60px]">
               {p.details.map((detail, i) => (
-                <div className="flex gap-x-3 text-gray-400">
+                <div key={i} className="flex gap-x-3 items-start">
                   <img
-                    src={arrow}
-                    className="max-h-fit mt-[5px] bg-transparent"
+                    src={p.position === "middle" ? arrow2 : arrow}
+                    className="mt-[4px] bg-transparent"
                     alt="right arrow"
                   />
                   <p
-                    className={`flex items-start text-base leading-6 ${p.textColor}`}
+                    className={`flex items-start text-base leading-6 font-cw-regular ${
+                      p.position === "middle"
+                        ? "text-white"
+                        : "text-cw-secondary opacity-60"
+                    }`}
                   >
                     {detail}
                   </p>
                 </div>
               ))}
             </div>
-            <button className="px-[30px] py-[12px] bg-cw-primary rounded-md flex justify-center items-center gap-x-[16px] mt-[60px] mb-5 lg:mt-auto">
-              <span className="text-[18px] leading-[21px] text-white">
+            <button
+              className={`px-[30px] py-[12px] rounded-md flex justify-center items-center gap-x-[16px] mt-[60px] mb-5 lg:mt-auto ${
+                p.position === "middle" ? "bg-white" : "bg-cw-primary"
+              }`}
+            >
+              <span
+                className={`text-[18px] leading-[21px] ${
+                  p.position === "middle" ? "text-cw-primary" : "text-white"
+                }`}
+              >
                 Get Package
               </span>
-              <span className="bg-white rounded-full p-[7px]">
+              <span
+                className={`rounded-full p-[7px] ${
+                  p.position === "middle" ? "bg-cw-primary" : "bg-white"
+                }`}
+              >
                 <GoArrowRight />
               </span>
             </button>

@@ -26,7 +26,7 @@ const Banner = () => {
             véhicule retrouve son éclat d’origine à chaque lavage.
           </p>
           <div className="md:flex md:flex-row-reverse md:justify-end lg:flex-col-reverse justify-start">
-            <div className="flex gap-x-[18px] mt-[32px] items-center md:ml-[122px] lg:ml-0">
+            <div className="flex gap-x-[18px] mt-[32px] items-center md:ml-[122px] lg:ml-0 lg:mt-[48px]">
               <div className="flex">
                 <img
                   src={avatar1}
@@ -64,8 +64,8 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-start">
-          <div className="relative lg:flex gap-x-5">
+        <div className="flex justify-center lg:justify-start mt-8 lg:mt-0">
+          <div className="lg:flex gap-x-5">
             <div className="">
               <img
                 src={blackCar3}
@@ -74,25 +74,25 @@ const Banner = () => {
               />
             </div>
 
-            <div className="flex lg:flex-col gap-y-6">
+            <div className="flex lg:flex-col gap-y-6 justify-between md:justify-center lg:justify-normal md:gap-x-6 mt-3 lg:mt-0 md:mt-6 ">
               <img
                 src={wahsingCar1}
-                className="rounded-[4px] w-[74px] md:w-[120px]"
+                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
                 alt="washing car 1"
               />
               <img
                 src={insideCar1}
-                className="rounded-[4px] w-[74px] md:w-[120px]"
+                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
                 alt="inside car 1"
               />
               <img
                 src={wahsingCar2}
-                className="rounded-[4px] w-[74px] md:w-[120px]"
+                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
                 alt="washing car 2"
               />
               <img
                 src={insideCar2}
-                className="rounded-[4px] w-[74px] md:w-[120px]"
+                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
                 alt="inside car 2"
               />
             </div>

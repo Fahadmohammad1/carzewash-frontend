@@ -3,10 +3,11 @@ import BookingForm from "../components/home/BookingForm";
 
 const Booking = () => {
   return (
-    <section className="px-5">
-      <h1 className="font-black text-[28px] leading-[42px] text-center mt-[47px] mb-8">
-        <span className="text-cw-secondary">Réservation de votre</span>{" "}
-        <span className="text-cw-primary">forfait spécial</span>
+    <section className="px-5 lg:px-[104px]">
+      <h1 className="font-black text-[28px] lg:text-[52px] lg:leading-[80px] leading-[42px] text-center mt-[47px] mb-8 tracking-wide font-cw-primary">
+        <span className="text-cw-secondary">RÉSERVATION DE VOTRE</span>
+        <br />
+        <span className="text-cw-primary">FORFAIT SPÉCIAL</span>
       </h1>
       <BookingForm />
     </section>

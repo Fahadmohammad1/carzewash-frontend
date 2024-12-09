@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <section className="navbar mb-[40px] mt-6 px-5 md:px-10 lg:px-[104px]">
+    <section className="navbar mb-[40px] mt-6 px-5 md:px-10 lg:px-[104px] lg:mb-[80px]">
       <div className="flex-1 lg:flex-none">
         <img src={logo} className="w-[67px] lg:w-[110px]" alt="logo" />
       </div>
@@ -30,35 +30,32 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
+              <Link to="/">Accueil</Link>
             </li>
             <li>
-              <a>Settings</a>
+              <Link to="/pricing">Tarification</Link>
             </li>
             <li>
-              <a>Logout</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex mx-auto">
-        <ul className="menu menu-horizontal px-1">
-          <li className="text-cw-primary font-medium text-[20px] leading-[23px]">
+        <ul className="menu menu-horizontal px-1 flex gap-x-10">
+          <li className="text-cw-primary font-medium text-[20px] leading-[23px] hover:bg-cw-secondary rounded-lg hover:text-white">
             <Link to="/">Accueil</Link>
           </li>
-          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary opacity-40">
+          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white">
             <Link to="/pricing">Tarification</Link>
           </li>
-          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary opacity-40">
+          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white">
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end hidden lg:flex w-fit">
-        <button className="px-[51px] py-[17px] bg-cw-primary rounded-lg">
+        <button className="px-[51px] py-[17px] bg-cw-primary rounded-lg text-white text-[20px] font-medium hover:bg-cw-secondary">
           Réservation
         </button>
       </div>

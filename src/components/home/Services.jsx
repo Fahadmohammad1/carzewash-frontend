@@ -14,12 +14,12 @@ const Services = () => {
       slidesToSlide: 3, // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 768 },
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 475, min: 0 },
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
@@ -51,18 +51,18 @@ const Services = () => {
     },
   ];
   return (
-    <section className="mt-[60px]">
+    <section className="mt-[60px] md:mt-[120px]">
       <h1 className="text-[28px] leading-[42px] md:text-4xl lg:text-[52px] md:leading-[52px] lg:leading-[80px] lg:tracking-wide font-black text-center mb-3 md:px-[155px] lg:font-cw-primary">
         <span className="text-cw-secondary">Apportant de l’éclat</span>
         <br />
         <span className="text-cw-primary">pour votre voiture</span>
       </h1>
-      <p className="text-base leading-6 text-center mb-12 md:px-16 lg:px-60">
+      <p className="text-base leading-6 text-center mb-12 md:px-20 lg:px-60">
         Nous offrons des services de nettoyage et d’entretien conçus pour
         restaurer l’apparence et la propreté de votre véhicule, en mettant
         l’accent sur la qualité et la satisfaction du client.
       </p>
-      <div className="grid grid-cols-1 lg:grid lg:grid-cols-3 lg:gap-x-10 gap-y-8 md:hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10 gap-y-8 overflow-x-scroll md:flex md:justify-center md:items-center md:gap-x-10 md:w-full">
         {services?.map((service) => (
           <Service key={service.id} service={service} />
         ))}

@@ -5,88 +5,98 @@ import whatsapp from "../assets/footer/Whatsapp.png";
 import phone from "../assets/contact/phone.png";
 import mail from "../assets/contact/mail.png";
 import location from "../assets/contact/location.svg";
-import user from "../assets/bookingForm/user.png";
-import phone2 from "../assets/bookingForm/phone.png";
-import car from "../assets/bookingForm/car.png";
-import date from "../assets/bookingForm/date.png";
+import email from "../assets/contact/email.svg";
+import user from "../assets/bookingForm/user.svg";
+import phone2 from "../assets/bookingForm/phone.svg";
 
 const Contact = () => {
   return (
-    <section className="md:px-10">
-      <h1 className="font-black text-[28px] leading-[42px] text-center mt-[47px] mb-8 px-10">
+    <section className="md:px-10 lg:px-[104px]">
+      <h1 className="font-black text-[28px] lg:text-[52px] leading-[42px] lg:leading-[80px] text-center mt-[47px] mb-8 px-10 font-cw-primary">
         <span className="text-cw-secondary">Contact avec</span>{" "}
         <span className="text-cw-primary">Carzewash</span>
       </h1>
-      <div className="bg-cw-secondary px-5 py-10 md:rounded-xl">
-        <h2 className="text-[28px] leading-[42px] font-medium text-white">
-          Nous sommes engagés Pour vous aider
-        </h2>
-        <p className="text-base leading-[24px] mt-3 text-base-100 mb-[42px]">
-          Notre équipe dévouée est prête à vous fournir le meilleur service
-          possible, répondant à vos besoins avec professionnalisme et attention.
-        </p>
-        <div className="text-white">
-          <div className="flex text-xl gap-x-4 items-center">
-            <img src={phone} alt="phone icon" /> <p>07 75 79 96 98</p>
-          </div>
-          <div className="flex text-xl gap-x-4 items-center mt-7">
-            <img src={mail} alt="mail icon" /> <p>carzewash@gmail.com</p>
-          </div>
-          <div className="flex text-xl gap-x-4 items-center mt-7">
-            <img src={location} alt="location icon" /> <p>Ajaccio, France</p>
+      <div className="lg:flex lg:gap-x-10">
+        <div>
+          <div className="bg-cw-secondary px-5 lg:px-8 py-10 md:rounded-xl">
+            <div className="">
+              <div>
+                <h2 className="text-[28px] lg:text-[36px] lg:leading-[52px] leading-[42px] font-medium text-white font-cw-medium">
+                  Nous sommes engagés Pour vous aider
+                </h2>
+                <p className="text-base leading-[24px] mt-3 text-base-100 mb-[42px]">
+                  Notre équipe dévouée est prête à vous fournir le meilleur
+                  service possible, répondant à vos besoins avec
+                  professionnalisme et attention.
+                </p>
+                <div className="text-white lg:mt-[100px]">
+                  <div className="flex text-xl gap-x-4 items-center">
+                    <img src={phone} alt="phone icon" /> <p>07 75 79 96 98</p>
+                  </div>
+                  <div className="flex text-xl gap-x-4 items-center mt-7">
+                    <img src={mail} alt="mail icon" />{" "}
+                    <p>carzewash@gmail.com</p>
+                  </div>
+                  <div className="flex text-xl gap-x-4 items-center mt-7">
+                    <img src={location} alt="location icon" />{" "}
+                    <p>Ajaccio, France</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-20 lg:mt-[100px] flex gap-x-5">
+                <img src={facebook} alt="facebook logo" />
+                <img src={instagram} alt="instagram logo" />
+                <img src={whatsapp} alt="whatsapp logo" />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-20 flex gap-x-5">
-          <img src={facebook} alt="facebook logo" />
-          <img src={instagram} alt="instagram logo" />
-          <img src={whatsapp} alt="whatsapp logo" />
-        </div>
-      </div>
-      <div>
-        <div className="px-5 md:px-0 py-8 flex flex-col gap-y-4 md:gap-y-6">
-          <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] ">
-            <img src={user} alt="" />
-            <input
-              type="text"
-              className="border-0"
-              name="fullname"
-              id="fullname"
-              placeholder="Votre nom complet"
-            />
-          </label>
-          <div className="flex flex-col gap-y-4 md:gap-y-6 md:flex-row md:gap-x-5">
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] md:w-full">
-              <img src={phone2} alt="" />
+        <div>
+          <div className="px-5 md:px-0 py-8 lg:pt-3 flex flex-col gap-y-4 md:gap-y-6">
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] ">
+              <img className="opacity-40" src={user} alt="" />
               <input
                 type="text"
-                className="border-0"
-                name="phone"
-                id="phone"
-                placeholder="téléphone"
+                className="outline-none placeholder-cw-secondary placeholder-opacity-60"
+                name="fullname"
+                id="fullname"
+                placeholder="Votre nom complet"
               />
             </label>
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] md:w-full">
-              <img src={car} alt="" />
-              <input
-                type="email"
-                className="border-0"
-                name="email"
-                id="email"
-                placeholder="Adresse email"
-              />
-            </label>
+            <div className="flex flex-col gap-y-4 md:gap-y-6 md:flex-row md:gap-x-5">
+              <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:w-full">
+                <img className="opacity-40" src={email} alt="" />
+                <input
+                  type="email"
+                  className="outline-none placeholder-cw-secondary placeholder-opacity-60"
+                  name="email"
+                  id="email"
+                  placeholder="Adresse Email"
+                />
+              </label>
+              <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:w-full">
+                <img className="opacity-40" src={phone2} alt="" />
+                <input
+                  type="phone"
+                  className="outline-none placeholder-cw-secondary placeholder-opacity-60"
+                  name="phone"
+                  id="phone"
+                  placeholder="Numéro de téléphone"
+                />
+              </label>
+            </div>
+            <textarea
+              className="rounded-[10px] border-[2px] pt-3 pb-10 px-[18px] outline-none text-cw-secondary opacity-60 border-[#14141433]"
+              name="message"
+              id="message"
+              placeholder=""
+            >
+              Écrivez votre message.......
+            </textarea>
+            <button className="px-[51px] py-[17px] bg-cw-primary rounded-md mt-4 lg:w-fit">
+              Contact
+            </button>
           </div>
-          <textarea
-            className="rounded-[10px] border-[1px] pt-3 pb-10 px-[18px]"
-            name="message"
-            id="message"
-            placeholder="Écrivez votre message......."
-          >
-            Écrivez votre message.......
-          </textarea>
-          <button className="px-[51px] py-[17px] bg-cw-primary rounded-md mt-4">
-            Réservation
-          </button>
         </div>
       </div>
     </section>

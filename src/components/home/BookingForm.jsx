@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import user from "../../assets/bookingForm/user.png";
-import phone from "../../assets/bookingForm/phone.png";
-import car from "../../assets/bookingForm/car.png";
-import date from "../../assets/bookingForm/date.png";
-import clock from "../../assets/bookingForm/clock.png";
+import user from "../../assets/bookingForm/user.svg";
+import phone from "../../assets/bookingForm/phone.svg";
+import car from "../../assets/bookingForm/car.svg";
+import date from "../../assets/bookingForm/date.svg";
+import clock from "../../assets/bookingForm/clock.svg";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
@@ -90,18 +90,21 @@ const BookingForm = () => {
   };
 
   return (
-    <section className="mt-[26px] md:mt-[60px] border-[2px] rounded-xl">
+    <section
+      style={{ boxShadow: "0px 8px 26px 0px #3C98CC2B" }}
+      className="mt-[26px] md:mt-[60px] border-[2px] rounded-xl"
+    >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="px-5 md:px-8 py-8 flex flex-col gap-y-3 md:gap-y-6"
+        className="px-5 md:px-8 py-8 flex flex-col gap-y-4 md:gap-y-6"
       >
-        <div className="lg:flex lg:gap-x-6">
-          <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] md:px-5 lg:w-full ">
-            <img src={user} alt="" />
+        <div className="flex flex-col gap-y-4 lg:gap-y-0 lg:flex-row lg:gap-x-6">
+          <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 lg:w-full">
+            <img src={user} className="lg:w-[26px] opacity-40" alt="icon" />
             <input
               {...register("fullName", { required: true })}
               type="text"
-              className="border-0"
+              className="outline-none placeholder-cw-secondary placeholder-opacity-60"
               name="fullName"
               id="fullName"
               placeholder="Votre nom complet"
@@ -112,13 +115,13 @@ const BookingForm = () => {
           )}
 
           {/* phone */}
-          <div className="flex flex-col gap-y-3 md:flex-row md:gap-x-5 lg:gap-x-6 md:gap-y-6">
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] md:px-5 md:w-full lg:w-[260px]">
-              <img src={phone} alt="" />
+          <div className="flex flex-col gap-y-4 md:flex-row md:gap-x-5 lg:gap-x-6 md:gap-y-6">
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 md:w-full lg:w-[260px]">
+              <img src={phone} className="lg:w-[20px] opacity-40" alt="icon" />
               <input
                 {...register("phone", { required: true })}
                 type="number"
-                className="border-0"
+                className="outline-none placeholder-cw-secondary placeholder-opacity-60"
                 name="phone"
                 id="phone"
                 placeholder="téléphone"
@@ -129,12 +132,12 @@ const BookingForm = () => {
             )}
 
             {/* car model */}
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[1px] py-3 px-[18px] md:px-5 md:w-full">
-              <img src={car} alt="" />
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 md:w-full">
+              <img src={car} className="lg:w-[20px] opacity-40" alt="icon" />
               <input
                 {...register("carModel", { required: true })}
                 type="text"
-                className="border-0"
+                className="outline-none placeholder-cw-secondary placeholder-opacity-60"
                 name="carModel"
                 id="carModel"
                 placeholder="modèle de voiture"
@@ -147,14 +150,18 @@ const BookingForm = () => {
         </div>
 
         {/* booking date */}
-        <div className="lg:flex lg:gap-x-6">
-          <div className="flex justify-between md:gap-x-5">
-            <label className="flex items-center gap-[10px] rounded-[10px] border py-3 px-[18px] w-[134px] md:px-5 md:w-full lg:w-[260px]">
-              <img src={date} alt="date icon" />
+        <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-x-6">
+          <div className="flex gap-x-4 md:gap-x-5">
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
+              <img
+                src={date}
+                className="lg:w-[20px] opacity-40"
+                alt="date icon"
+              />
               <input
                 {...register("date", { required: true })}
                 type="date"
-                className="border-0 w-[73px] lg:w-full text-gray-500"
+                className="outline-none w-[73px] lg:w-full md:w-full text-cw-secondary text-opacity-60"
                 name="date"
                 id="date"
                 min={today}
@@ -166,11 +173,15 @@ const BookingForm = () => {
             )}
 
             {/* Time */}
-            <label className="flex items-center gap-[10px] rounded-[10px] border py-3 px-[18px] w-[134px] md:px-5 md:w-full lg:w-[260px]">
-              <img src={clock} alt="Clock Icon" />
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
+              <img
+                src={clock}
+                className="lg:w-[20px] opacity-40"
+                alt="Clock Icon"
+              />
               <select
                 {...register("time", { required: true })}
-                className="border-0 w-full text-gray-500 focus:outline-none bg-white"
+                className="border-0 w-full text-cw-secondary text-opacity-60 focus:outline-none bg-white"
               >
                 <option value="" disabled>
                   Select Time
@@ -188,9 +199,9 @@ const BookingForm = () => {
           </div>
 
           {/* Package */}
-          <label className="flex items-center gap-[10px] rounded-[10px] border py-3 px-[18px] w-[134px] md:px-5 md:w-full lg:w-[260px]">
+          <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
             <select
-              className="border-0 lg:w-full text-gray-500 focus:outline-none bg-white"
+              className="border-0 w-full text-cw-secondary text-opacity-60 focus:outline-none bg-white"
               {...register("formula", { required: true })}
             >
               <option value="Classique" defaultChecked>
@@ -205,12 +216,12 @@ const BookingForm = () => {
           )}
         </div>
 
-        <p className="mb-8 text-gray-400 italic">
+        <p className="mb-8 text-gray-400 italic font-cw-regular">
           Vous serez contacté dans les plus brefs délais
         </p>
         <button
           type="submit"
-          className="px-[51px] py-[17px] bg-cw-primary rounded-md lg:w-fit"
+          className="px-[51px] py-[17px] bg-cw-primary rounded-md lg:w-fit text-white hover:bg-cw-secondary lg:text-[20px] font-medium md:w-fit"
         >
           Réservation
         </button>

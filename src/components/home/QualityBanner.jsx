@@ -11,14 +11,14 @@ const QualityBanner = () => {
         backgroundBlendMode: "overlay",
         backgroundRepeat: "no-repeat",
       }}
-      className="bg-cw-secondary pt-[50px] pb-8 px-5 text-base-300 md:px-[74px] lg:mt-[124px] lg:rounded-[40px]"
+      className="bg-cw-secondary pt-[50px] pb-8 px-5 text-base-300 md:px-[74px] lg:mt-[124px] lg:rounded-[40px] mt-[26px] md:mt-[120px]"
     >
-      <h1 className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-white text-center md:px-20">
+      <h1 className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-white text-center md:px-20 tracking-wide">
         <span>Parce que votre voiture</span>
         <br />
-        <span className="lg:text-cw-primary">mérite un bain</span>
+        <span className="md:text-cw-primary">mérite un bain</span>
       </h1>
-      <p className="text-center leading-6">
+      <p className="text-center leading-6 lg:px-[230px] tracking-wide font-cw-regular opacity-70 mt-3">
         Your car deserves the best care, and our car wash service is designed to
         provide a deep clean and complete care. With high-quality products, we
         guarantee that your car will be sparkling after every wash.

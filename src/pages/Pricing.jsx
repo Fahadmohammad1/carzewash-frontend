@@ -5,7 +5,7 @@ import Benifits from "../components/home/Benifits";
 
 const Pricing = () => {
   return (
-    <div className="px-5">
+    <div className="px-5 lg:px-[104px]">
       <Packages />
       <Review />
       <Benifits />

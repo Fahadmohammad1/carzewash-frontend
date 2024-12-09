@@ -26,13 +26,12 @@ const Review = () => {
             </span>
           </button>
         </div>
-        <div className="bg-cw-primary mt-8 px-[30px] pt-[38px] pb-12 flex flex-col items-center rounded-[20px]">
-          <div className="mb-8">
+        <div className="bg-cw-primary mt-8 lg:mt-0 px-[30px] pt-[38px] pb-12 flex flex-col items-center lg:items-start rounded-[20px] lg:min-h-max">
+          <div className="mb-8 lg:h-full">
             <p className="text-center text-white">
               Excellent service et résultats impeccables. Ma voiture brille
               comme jamais !
             </p>
-            <img src={icon} alt="" />
           </div>
           <div className="flex flex-col items-center md:flex-row md:items-center md:gap-x-4">
             <img

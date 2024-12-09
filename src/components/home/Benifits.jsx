@@ -29,7 +29,7 @@ const Benifits = () => {
   ];
   return (
     <section className="mt-[60px] lg:mt-[120px]">
-      <h1 className="text-[30px] leading-[42px] font-black text-center md:hidden">
+      <h1 className="text-[30px] leading-[42px] font-black text-center md:hidden mb-8">
         <span className="text-cw-secondary">
           Dites adieu aux saletés, bonjour à la
         </span>{" "}
@@ -43,11 +43,12 @@ const Benifits = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-5 lg:grid-cols-4 lg:gap-x-5">
         {benifits.map((b) => (
           <div
+            style={{ boxShadow: "0px 5px 30px 0px #3C98CC33" }}
             key={b.id}
             className="mt-8 px-[60px] lg:px-9 py-8 shadow rounded-[10px] mb-10"
           >
             <img className="mx-auto lg:mx-0" src={b.icon} alt="icon" />
-            <h4 className="text-cw-secondary font-bold text-[32px] leading-[44px] mt-5 text-center lg:text-start">
+            <h4 className="text-cw-secondary font-bold text-[32px] leading-[44px] mt-5 text-center lg:text-start px-2 lg:px-0 font-cw-regular">
               {b.title}
             </h4>
           </div>

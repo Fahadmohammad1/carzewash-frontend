@@ -1,14 +1,11 @@
 import React from "react";
-import arrow from "../../assets/right-arrow1.svg";
-import arrow2 from "../../assets/right-arrow2.svg";
-import { GoArrowRight } from "react-icons/go";
+import Pack from "./Pack";
 
 const Packages = () => {
   const packages = [
     {
       id: 1,
       price: 50,
-      position: "",
       title: "Formule Classique",
       type: "Forfait Argent",
       details: [
@@ -22,7 +19,6 @@ const Packages = () => {
     {
       id: 2,
       price: 90,
-      position: "middle",
       title: "Formule Premium",
       type: "Forfait Gold",
       details: [
@@ -41,7 +37,6 @@ const Packages = () => {
     {
       id: 3,
       price: 190,
-      position: "",
       title: "Formule Prestige",
       type: "Forfait Platine",
       details: [
@@ -68,77 +63,8 @@ const Packages = () => {
         <span className="text-cw-primary">Détaillements</span>
       </h1>
       <div className="grid grid-cols-1 mt-8 lg:grid-cols-3 lg:gap-x-10">
-        {packages.map((p) => (
-          <div
-            key={p.id}
-            className={`card w-full shadow-xl mt-8 px-5 ${
-              p.position === "middle" ? "bg-cw-primary" : ""
-            }`}
-          >
-            <div className="">
-              <h2
-                className={`font-extrabold text-[32px] leading-[38px] mt-10 ${
-                  p.position === "middle" ? "text-white" : "text-cw-secondary"
-                }`}
-              >
-                {p.title}
-              </h2>
-              <p
-                className={`leading-6 text-base opacity-50 ${
-                  p.position === "middle" ? "text-white" : "text-cw-secondary"
-                }`}
-              >
-                {p.type}
-              </p>
-              <p
-                className={`mt-8 mb-16 text-[64px] leading-[68px] font-black ${
-                  p.position === "middle" ? "text-white" : "text-cw-primary"
-                }`}
-              >
-                €{p.price}
-              </p>
-            </div>
-            <div className="flex flex-col gap-y-4 lg:mb-[60px]">
-              {p.details.map((detail, i) => (
-                <div key={i} className="flex gap-x-3 items-start">
-                  <img
-                    src={p.position === "middle" ? arrow2 : arrow}
-                    className="mt-[4px] bg-transparent"
-                    alt="right arrow"
-                  />
-                  <p
-                    className={`flex items-start text-base leading-6 font-cw-regular ${
-                      p.position === "middle"
-                        ? "text-white"
-                        : "text-cw-secondary opacity-60"
-                    }`}
-                  >
-                    {detail}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <button
-              className={`px-[30px] py-[12px] rounded-md flex justify-center items-center gap-x-[16px] mt-[60px] mb-5 lg:mt-auto ${
-                p.position === "middle" ? "bg-white" : "bg-cw-primary"
-              }`}
-            >
-              <span
-                className={`text-[18px] leading-[21px] ${
-                  p.position === "middle" ? "text-cw-primary" : "text-white"
-                }`}
-              >
-                Get Package
-              </span>
-              <span
-                className={`rounded-full p-[7px] ${
-                  p.position === "middle" ? "bg-cw-primary" : "bg-white"
-                }`}
-              >
-                <GoArrowRight />
-              </span>
-            </button>
-          </div>
+        {packages?.map((p) => (
+          <Pack key={p.id} p={p} />
         ))}
       </div>
     </section>

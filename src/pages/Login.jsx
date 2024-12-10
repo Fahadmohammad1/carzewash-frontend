@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router";
+import Loader from "../components/shared/Loader";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -54,7 +55,7 @@ const Login = () => {
   };
 
   if (loading) {
-    <p>Loading...</p>;
+    return <Loader />;
   }
   return (
     <section className="flex justify-center items-center h-screen bg-cw-secondary">

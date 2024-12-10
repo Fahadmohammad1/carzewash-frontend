@@ -45,7 +45,7 @@ const Benifits = () => {
           <div
             style={{ boxShadow: "0px 5px 30px 0px #3C98CC33" }}
             key={b.id}
-            className="mt-8 px-[60px] lg:px-9 py-8 shadow rounded-[10px] mb-10"
+            className="mt-8 px-[60px] lg:px-9 py-8 shadow rounded-[10px] mb-6"
           >
             <img className="mx-auto lg:mx-0" src={b.icon} alt="icon" />
             <h4 className="text-cw-secondary font-bold text-[32px] leading-[44px] mt-5 text-center lg:text-start px-2 lg:px-0 font-cw-regular">

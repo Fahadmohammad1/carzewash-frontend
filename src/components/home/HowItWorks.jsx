@@ -2,8 +2,17 @@ import React from "react";
 import date from "../../assets/howItWorks/date.png";
 import car from "../../assets/howItWorks/car.png";
 import delivery from "../../assets/howItWorks/delivery.png";
+import Slider from "react-slick";
 
 const HowItWorks = () => {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+  };
+
   const userGuides = [
     {
       id: 1,
@@ -38,10 +47,12 @@ const HowItWorks = () => {
         Découvrez notre processus simple et efficace pour redonner à votre
         voiture tout son éclat.
       </p>
-      <div className="lg:grid lg:grid-cols-3 lg:gap-x-5">
+      <div className="lg:grid lg:grid-cols-3 lg:gap-x-5 md:hidden">
         {userGuides.map((guide) => (
           <div
-            style={{ boxShadow: "0px 6px 20px 0px #00000026" }}
+            style={{
+              boxShadow: "0px 5px 30px 0px #3C98CC33",
+            }}
             key={guide.id}
             className="card w-full shadow-xl mt-8 px-6 py-8"
           >
@@ -56,6 +67,29 @@ const HowItWorks = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="slider-container hidden md:block lg:hidden">
+        <Slider {...settings}>
+          {userGuides.map((guide) => (
+            <div key={guide.id} className="px-[10px] h-max pb-6">
+              <div
+                style={{ boxShadow: "0px 6px 20px 0px #00000026" }}
+                className="card w-full mt-8 px-6 py-8 md:h-max md:px-4"
+              >
+                <div>
+                  <div className="bg-cw-primary p-[27px] rounded-full max-w-fit">
+                    <img src={guide.icon} alt="" />
+                  </div>
+                  <h2 className="font-black text-[28px] leading-[42px] mt-10 text-cw-primary">
+                    {guide.title}
+                  </h2>
+                  <p className="leading-6 text-base">{guide.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

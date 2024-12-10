@@ -1,7 +1,5 @@
 import React from "react";
-import blackCar from "../../assets/banner/black-car.png";
 import blackCar3 from "../../assets/banner/black-car.jpeg";
-import blackCar2 from "../../assets/banner/black-car2.png";
 import wahsingCar1 from "../../assets/banner/washing-car-1.png";
 import insideCar1 from "../../assets/banner/inside-car-1.png";
 import wahsingCar2 from "../../assets/banner/washing-car-2.png";
@@ -10,6 +8,7 @@ import avatar1 from "../../assets/banner/avatar-1.png";
 import avatar2 from "../../assets/banner/avatar-2.png";
 import avatar3 from "../../assets/banner/avatar-3.png";
 import { GoArrowRight } from "react-icons/go";
+// import topBackground from "../../assets/banner/top-bg.jpg";
 
 const Banner = () => {
   return (

@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import { IoArrowDownOutline } from "react-icons/io5";
 import userAvatar2 from "../../assets/user-avatar2.svg";
 import toast from "react-hot-toast";
+import Loader from "../../components/shared/Loader";
 
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { phone, email, password } = JSON.parse(localStorage.getItem("admin"));
+
   useEffect(() => {
     const getBookings = async () => {
       setLoading(true);
       try {
         await fetch(
-          "http://localhost:5000/api/booking?phone=00000&email=carzewash@gmail.com&password=carzewashadmin"
+          `http://localhost:5000/api/booking?phone=${phone}&email=${email}&password=${password}`
         )
           .then((res) => res.json())
           .then((data) => {
@@ -31,7 +34,7 @@ const BookingList = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading....</p>;
+    return <Loader />;
   }
 
   return (

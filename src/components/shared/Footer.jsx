@@ -6,7 +6,7 @@ import { LuClock4 } from "react-icons/lu";
 
 const Footer = () => {
   return (
-    <section className="bg-cw-secondary px-5 lg:px-0 mt-[60px] pt-[60px] lg:pt-[75px] pb-5 lg:pb-0">
+    <section className="bg-cw-secondary px-5 lg:px-0 mt-[40px] pt-[60px] lg:pt-[75px] pb-5 lg:pb-0">
       <div className="lg:flex lg:gap-x-[118px] lg:px-[104px] ">
         <div>
           <h2 className="text-[24px] leading-[36px] font-bold text-center text-white lg:text-start">
@@ -51,7 +51,7 @@ const Footer = () => {
           <p className="mt-5 text-white">Closed Sta & Sun</p>
         </div>
       </div>
-      <p className="text-[14px] leading-6 mt-10 lg:bg-white lg:text-center lg:text-cw-secondary lg:opacity-70 lg:py-4">
+      <p className="text-[14px] leading-6 mt-10 lg:bg-white lg:text-center lg:text-cw-secondary lg:opacity-70 lg:py-4 text-white opacity-70">
         © 2024 CARZEWASH • Tous droits réservés
       </p>
     </section>

@@ -1,0 +1,47 @@
+import React from "react";
+import { GoArrowRight } from "react-icons/go";
+import arrow from "../../assets/right-arrow1.svg";
+import { useNavigate } from "react-router";
+
+const Pack = ({ p }) => {
+  const navigate = useNavigate();
+  return (
+    <div
+      style={{ boxShadow: "0px 5px 30px 0px #3C98CC33" }}
+      className="card w-full shadow-xl mt-8 px-5 hover:bg-cw-primary group"
+    >
+      <div>
+        <h3 className="font-extrabold text-[32px] leading-[38px] mt-10 text-cw-secondary group-hover:text-white">
+          {p.title}
+        </h3>
+        <p className="leading-6 text-base opacity-50">{p.type}</p>
+        <p className="mt-8 mb-16 text-[64px] leading-[68px] font-black text-cw-primary group-hover:text-white">
+          €{p.price}
+        </p>
+      </div>
+      <div className="flex flex-col gap-y-4 lg:mb-[60px]">
+        {p.details.map((detail, i) => (
+          <div key={i} className="flex gap-x-3 items-start">
+            <img src={arrow} className="mt-[4px]" alt="right arrow" />
+            <p className="flex items-start text-base leading-6 font-cw-regular text-cw-secondary opacity-70 group-hover:text-white">
+              {detail}
+            </p>
+          </div>
+        ))}
+      </div>
+      <button
+        onClick={() => navigate("/booking")}
+        className="px-[30px] py-[12px] rounded-md flex justify-center items-center gap-x-[16px] mt-[60px] mb-5 lg:mt-auto group-hover:bg-white bg-cw-primary"
+      >
+        <span className="text-[18px] leading-[21px] text-white group-hover:text-cw-primary">
+          Get Package
+        </span>
+        <span className="rounded-full p-[7px] group-hover:text-white bg-white group-hover:bg-cw-primary">
+          <GoArrowRight />
+        </span>
+      </button>
+    </div>
+  );
+};
+
+export default Pack;

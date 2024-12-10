@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import Loader from "../shared/Loader";
 
 const UpdatePassModal = () => {
   const [loading, setLoading] = useState(false);
@@ -54,7 +55,7 @@ const UpdatePassModal = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
   return (
     <section>

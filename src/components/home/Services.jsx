@@ -20,7 +20,6 @@ const Services = () => {
     {
       id: 1,
       image: service1,
-      bgColor: "bg-white",
       title: "Services Professionnels",
       description:
         "Notre équipe expérimentée utilise des techniques avancées pour un nettoyage méticuleux.",
@@ -28,7 +27,6 @@ const Services = () => {
     {
       id: 2,
       image: service2,
-      bgColor: "bg-cw-primary",
       title: "Équipements haut de gamme",
       description:
         "Nous utilisons les meilleurs outils pour garantir un lavage impeccable et sécurisé.",
@@ -36,7 +34,6 @@ const Services = () => {
     {
       id: 3,
       image: service3,
-      bgColor: "bg-white",
       title: "Tarifs Compétitifs",
       description:
         "Des services de qualité à des prix abordables pour tous nos clients.",
@@ -60,7 +57,7 @@ const Services = () => {
         ))}
       </div>
       <div className="slider-container hidden md:block lg:hidden">
-        <Slider className="" {...settings}>
+        <Slider {...settings}>
           {services?.map((service) => (
             <Service key={service.id} service={service} />
           ))}

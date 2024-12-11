@@ -56,7 +56,7 @@ const Quality = () => {
               className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md flex items-center gap-x-[16px] transform hover:scale-110 transition duration-150 ease-in-out"
             >
               <span className="text-[18px] leading-[21px] text-white">
-                Learn More
+                en savoir plus
               </span>
               <span className="bg-white rounded-full p-[7px]">
                 <GoArrowRight />

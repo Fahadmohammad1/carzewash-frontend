@@ -10,10 +10,8 @@ import avatar3 from "../../assets/banner/avatar-3.png";
 import { GoArrowRight } from "react-icons/go";
 import topBackground from "../../assets/banner/top-bg.jpg";
 import { motion } from "motion/react";
-import { useNavigate } from "react-router";
 
-const Banner = () => {
-  const navigate = useNavigate();
+const Banner = ({ handleScrollToPricing }) => {
   const variants2 = {
     hidden: { y: -25, opacity: 0 },
     visible: { y: 0, opacity: 1 },
@@ -46,9 +44,11 @@ const Banner = () => {
             transition={{ duration: 2, ease: "easeInOut" }}
             className="text-[30px] md:text-[52px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary"
           >
-            <span className="text-cw-primary">Nous aimons faire</span>
+            <span className="text-cw-primary">L’art de sublimer</span>
             <br />
-            <span className="text-cw-secondary">Briller votre voiture</span>
+            <span className="text-cw-secondary">votre voiture</span>
+            <br />
+            <span className="text-cw-secondary">commence ici</span>
           </motion.h1>
           <motion.p
             variants={variants2}
@@ -58,9 +58,10 @@ const Banner = () => {
             transition={{ duration: 2, ease: "easeInOut" }}
             className="text-base leading-[24px] mt-[12px]"
           >
-            Nous croyons que chaque voiture mérite de briller comme neuve. Avec
-            notre expertise et des produits de qualité, nous assurons que votre
-            véhicule retrouve son éclat d’origine à chaque lavage.
+            Votre voiture mérite le meilleur, et vous aussi ! Grâce à notre
+            service de nettoyage automobile à domicile sur Ajaccio, bénéficiez
+            d'un véhicule impeccablement propre sans avoir à vous déplacer. Un
+            service sur mesure, pensé pour votre confort et votre satisfaction.
           </motion.p>
           <div className="md:flex md:flex-row-reverse md:justify-end lg:flex-col-reverse justify-start">
             <div className="flex gap-x-[18px] mt-[32px] items-center md:ml-[122px] lg:ml-0 lg:mt-[48px]">
@@ -91,11 +92,11 @@ const Banner = () => {
               </div>
             </div>
             <button
-              onClick={() => navigate("/pricing")}
+              onClick={handleScrollToPricing}
               className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md flex items-center gap-x-[16px] lg:w-fit transform hover:scale-110 transition duration-150 ease-in-out"
             >
               <span className="text-[18px] leading-[21px] text-white">
-                Learn More
+                en savoir plus
               </span>
               <span className="bg-white rounded-full p-[7px]">
                 <GoArrowRight />
@@ -109,7 +110,7 @@ const Banner = () => {
             <div className="">
               <img
                 src={blackCar3}
-                className="rounded-xl h-full lg:w-[500px]"
+                className="rounded-xl lg:h-full lg:w-[500px]"
                 alt="black car"
               />
             </div>

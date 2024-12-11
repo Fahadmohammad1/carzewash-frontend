@@ -1,6 +1,5 @@
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
-import arrow from "../../assets/right-arrow1.svg";
 import { useNavigate } from "react-router";
 import { motion } from "motion/react";
 import { LuArrowRightToLine } from "react-icons/lu";
@@ -47,7 +46,7 @@ const Pack = ({ p }) => {
         className="px-[30px] py-[12px] rounded-md flex justify-center items-center gap-x-[16px] mt-[60px] mb-5 lg:mt-auto group-hover:bg-white bg-cw-primary"
       >
         <span className="text-[18px] leading-[21px] text-white group-hover:text-cw-primary">
-          Get Package
+          Réserver la Formule
         </span>
         <span className="rounded-full p-[7px] group-hover:text-white bg-white group-hover:bg-cw-primary">
           <GoArrowRight />

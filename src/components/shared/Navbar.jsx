@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,6 +9,12 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
+
+  const location = useLocation();
+
+  const isActive = (path) =>
+    location.pathname === path || location.pathname === `${path}/`;
+
   return (
     <section className="navbar mb-[40px] mt-6 px-5 md:px-10 lg:px-[104px] lg:mb-[80px]">
       <div onClick={() => navigate("/")} className="flex-1 lg:flex-none">
@@ -34,7 +40,7 @@ const Navbar = () => {
           {dropdownOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-30 mt-3 w-52 p-2 shadow"
             >
               <li className="mb-2">
                 <Link to="/">Accueil</Link>
@@ -51,14 +57,35 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex mx-auto">
         <ul className="menu menu-horizontal px-1 flex gap-x-10">
-          <li className="text-cw-primary font-medium text-[20px] leading-[23px] hover:bg-cw-secondary rounded-lg hover:text-white">
-            <Link to="/">Accueil</Link>
+          <li>
+            <Link
+              to="/"
+              className={`font-medium text-[20px] leading-[23px] hover:bg-cw-secondary rounded-lg hover:text-white ${
+                isActive("/") ? "bg-cw-primary" : "bg-transparent"
+              }`}
+            >
+              Accueil
+            </Link>
           </li>
-          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white">
-            <Link to="/pricing">Tarification</Link>
+          <li>
+            <Link
+              to="/pricing"
+              className={`font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white ${
+                isActive("/pricing") ? "bg-cw-primary" : "bg-transparent"
+              }`}
+            >
+              Tarification
+            </Link>
           </li>
-          <li className="font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white">
-            <Link to="/contact">Contact</Link>
+          <li>
+            <Link
+              className={`font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white ${
+                isActive("/pricing") ? "bg-cw-primary" : "bg-transparent"
+              }`}
+              to="/contact"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>

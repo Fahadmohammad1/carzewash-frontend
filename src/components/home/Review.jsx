@@ -23,7 +23,7 @@ const Review = () => {
             className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md lg:flex items-center gap-x-[16px] hidden transform hover:scale-110 transition duration-150 ease-in-out"
           >
             <span className="text-[18px] leading-[21px] text-white">
-              Learn More
+              en savoir plus
             </span>
             <span className="bg-white rounded-full p-[7px]">
               <GoArrowRight />
@@ -37,7 +37,7 @@ const Review = () => {
           className="bg-cw-primary mt-8 lg:mt-0 px-[30px] pt-[38px] pb-12 flex flex-col items-center lg:items-start rounded-[20px] lg:min-h-max"
         >
           <div className="mb-8 lg:h-full">
-            <p className="text-center text-white">
+            <p className="text-center lg:text-start text-white">
               Excellent service et résultats impeccables. Ma voiture brille
               comme jamais !
             </p>
@@ -48,8 +48,7 @@ const Review = () => {
               src={avatar}
               alt="avatar"
             />
-            <h6 className="text-white text-[18px]">Jack Michael</h6>
-            <p className="text-white md:hidden">Customer</p>
+            <h6 className="text-white text-[18px]">Ajaccio2a</h6>
           </div>
         </div>
       </div>

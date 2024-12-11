@@ -50,11 +50,15 @@ const HowItWorks = () => {
         whileInView="visible"
         viewport={{ once: false }}
         transition={{ duration: 2, ease: "easeInOut" }}
-        className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center p-8 lg:p-0 md:px-20 lg:text-start lg:text-[52px] lg:leading-[80px] font-cw-primary tracking-wide"
+        className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center p-8 lg:p-0 md:px-20 lg:text-start lg:text-[52px] lg:leading-[80px] font-cw-primary tracking-wide "
       >
-        <span className="text-cw-secondary">Comment ça fonctionne pour</span>
+        <span className="text-cw-secondary text-wrap">
+          Comment ça fonctionne pour
+        </span>
         <br />
-        <span className="text-cw-primary">faire briller la voiture</span>
+        <span className="text-cw-primary text-wrap">
+          faire briller la voiture
+        </span>
       </motion.h1>
       <p className="text-center leading-6 md:px-28 lg:text-start lg:px-0 tracking-wide font-cw-regular lg:w-[490px] opacity-70">
         Découvrez notre processus simple et efficace pour redonner à votre

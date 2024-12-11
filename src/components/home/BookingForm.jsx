@@ -153,7 +153,7 @@ const BookingForm = () => {
 
         {/* booking date */}
         <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-x-6">
-          <div className="flex gap-x-4 md:gap-x-5">
+          <div className="flex flex-col gap-y-4 md:flex-row gap-x-4 md:gap-x-5">
             <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
               <img
                 src={date}
@@ -163,7 +163,7 @@ const BookingForm = () => {
               <input
                 {...register("date", { required: true })}
                 type="date"
-                className="outline-none w-[73px] lg:w-full md:w-full text-cw-secondary text-opacity-60"
+                className="outline-none w-full lg:w-full md:w-full text-cw-secondary text-opacity-60"
                 name="date"
                 id="date"
                 min={today}
@@ -207,14 +207,14 @@ const BookingForm = () => {
               {...register("formula", { required: true })}
             >
               <option value="Classique" defaultChecked>
-                Formula Classique
+                Formule Classique
               </option>
-              <option value="Premium">Formula Premium</option>
-              <option value="Prestige">Formula Prestige</option>
+              <option value="Premium">Formule Premium</option>
+              <option value="Prestige">Formule Prestige</option>
             </select>
           </label>
           {errors.formula && (
-            <span className="text-red-400">Formula is required</span>
+            <span className="text-red-400">Formule is required</span>
           )}
         </div>
 

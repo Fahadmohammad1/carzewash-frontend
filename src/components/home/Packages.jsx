@@ -56,8 +56,13 @@ const Packages = () => {
     },
   ];
   return (
-    <section className="mt-[60px] pt-10">
-      <h1 className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center md:px-10 lg:text-[52px] lg:leading-[80px] font-cw-primary">
+    <section className="mt-[60px] lg:mt-[80px] pt-10">
+      <h1
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+        className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center md:px-10 lg:text-[52px] lg:leading-[80px] font-cw-primary"
+      >
         <span className="text-cw-secondary">Noo Tarifs & Formules</span>
         <br />
         <span className="text-cw-primary">Détaillements</span>

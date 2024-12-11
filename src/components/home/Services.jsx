@@ -6,6 +6,7 @@ import service3 from "../../assets/service/service-3.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from "motion/react";
 
 const Services = () => {
   const settings = {
@@ -39,13 +40,26 @@ const Services = () => {
         "Des services de qualité à des prix abordables pour tous nos clients.",
     },
   ];
+
+  const variants2 = {
+    hidden: { y: -25, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
     <section className="mt-[60px] md:mt-[120px]">
-      <h1 className="text-[28px] leading-[42px] md:text-4xl lg:text-[52px] md:leading-[52px] lg:leading-[80px] lg:tracking-wide font-black text-center mb-3 md:px-[155px] lg:font-cw-primary">
+      <motion.h1
+        variants={variants2}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+        className="text-[28px] leading-[42px] md:text-4xl lg:text-[52px] md:leading-[52px] lg:leading-[66px] lg:tracking-wide font-black text-center mb-3 md:px-[155px] lg:font-cw-primary"
+      >
         <span className="text-cw-secondary">Apportant de l’éclat</span>
         <br />
         <span className="text-cw-primary">pour votre voiture</span>
-      </h1>
+      </motion.h1>
       <p className="text-base leading-6 text-center mb-12 md:px-20 lg:px-60">
         Nous offrons des services de nettoyage et d’entretien conçus pour
         restaurer l’apparence et la propreté de votre véhicule, en mettant

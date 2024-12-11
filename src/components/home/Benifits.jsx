@@ -43,6 +43,9 @@ const Benifits = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-5 lg:grid-cols-4 lg:gap-x-5">
         {benifits.map((b) => (
           <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            data-aos-easing="linear"
             style={{ boxShadow: "0px 5px 30px 0px #3C98CC33" }}
             key={b.id}
             className="mt-8 px-[60px] lg:px-9 py-8 shadow rounded-[10px] mb-6"

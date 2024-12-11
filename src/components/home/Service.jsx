@@ -1,8 +1,20 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const Service = ({ service }) => {
+  const cardVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        ease: [0.175, 0.885, 0.32, 1.275],
+      },
+    },
+  };
   return (
-    <div
+    <motion.div
+      variants={cardVariants}
+      whileHover="hover"
       style={{ boxShadow: "0px 10px 20px 0px #3C98CC26" }}
       className="px-[13px] py-[18px] rounded-[20px] shadow-md bg-white hover:bg-cw-primary md:max-w-[384px] md:mx-5 lg:mx-0 group"
     >
@@ -19,7 +31,7 @@ const Service = ({ service }) => {
           {service.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

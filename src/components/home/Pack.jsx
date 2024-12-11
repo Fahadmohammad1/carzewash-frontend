@@ -2,11 +2,24 @@ import React from "react";
 import { GoArrowRight } from "react-icons/go";
 import arrow from "../../assets/right-arrow1.svg";
 import { useNavigate } from "react-router";
+import { motion } from "motion/react";
+import { LuArrowRightToLine } from "react-icons/lu";
 
 const Pack = ({ p }) => {
+  const cardVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.2,
+        ease: [0.175, 0.885, 0.32, 1.275],
+      },
+    },
+  };
   const navigate = useNavigate();
   return (
-    <div
+    <motion.div
+      variants={cardVariants}
+      whileHover="hover"
       style={{ boxShadow: "0px 5px 30px 0px #3C98CC33" }}
       className="card w-full shadow-xl mt-8 px-5 hover:bg-cw-primary group"
     >
@@ -22,7 +35,7 @@ const Pack = ({ p }) => {
       <div className="flex flex-col gap-y-4 lg:mb-[60px]">
         {p.details.map((detail, i) => (
           <div key={i} className="flex gap-x-3 items-start">
-            <img src={arrow} className="mt-[4px]" alt="right arrow" />
+            <LuArrowRightToLine className="mt-[4px] min-w-4 opacity-70 group-hover:text-white" />
             <p className="flex items-start text-base leading-6 font-cw-regular text-cw-secondary opacity-70 group-hover:text-white">
               {detail}
             </p>
@@ -40,7 +53,7 @@ const Pack = ({ p }) => {
           <GoArrowRight />
         </span>
       </button>
-    </div>
+    </motion.div>
   );
 };
 

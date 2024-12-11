@@ -93,7 +93,7 @@ const Contact = () => {
             >
               Écrivez votre message.......
             </textarea>
-            <button className="px-[51px] py-[17px] bg-cw-primary rounded-md mt-4 lg:w-fit">
+            <button className="px-[51px] py-[17px] bg-cw-primary rounded-md mt-4 lg:w-fit font-cw-medium text-[20px] text-white hover:bg-cw-secondary transform hover:scale-110 transition duration-150 ease-in-out">
               Contact
             </button>
           </div>

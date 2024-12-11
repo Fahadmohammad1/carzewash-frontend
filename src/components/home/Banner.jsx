@@ -8,22 +8,60 @@ import avatar1 from "../../assets/banner/avatar-1.png";
 import avatar2 from "../../assets/banner/avatar-2.png";
 import avatar3 from "../../assets/banner/avatar-3.png";
 import { GoArrowRight } from "react-icons/go";
-// import topBackground from "../../assets/banner/top-bg.jpg";
+import topBackground from "../../assets/banner/top-bg.jpg";
+import { motion } from "motion/react";
+import { useNavigate } from "react-router";
 
 const Banner = () => {
+  const navigate = useNavigate();
+  const variants2 = {
+    hidden: { y: -25, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
   return (
-    <section>
-      <div className="lg:grid grid-cols-2 gap-x-5">
+    <section style={{ position: "relative" }}>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage: `url(${topBackground})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          opacity: "8%",
+          zIndex: -1,
+        }}
+      ></div>
+      <div className="lg:grid grid-cols-2 gap-x-5 relative z-10">
         <div>
-          <h1 className="text-[30px] md:text-[52px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
-            <span className="text-cw-primary">Nous aimons faire</span>{" "}
+          <motion.h1
+            style={{ overflow: "hidden", whiteSpace: "nowrap" }}
+            variants={{ hidden: { width: 0 }, visible: { width: "100%" } }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            className="text-[30px] md:text-[52px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary"
+          >
+            <span className="text-cw-primary">Nous aimons faire</span>
+            <br />
             <span className="text-cw-secondary">Briller votre voiture</span>
-          </h1>
-          <p className="text-base leading-[24px] mt-[12px]">
+          </motion.h1>
+          <motion.p
+            variants={variants2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            className="text-base leading-[24px] mt-[12px]"
+          >
             Nous croyons que chaque voiture mérite de briller comme neuve. Avec
             notre expertise et des produits de qualité, nous assurons que votre
             véhicule retrouve son éclat d’origine à chaque lavage.
-          </p>
+          </motion.p>
           <div className="md:flex md:flex-row-reverse md:justify-end lg:flex-col-reverse justify-start">
             <div className="flex gap-x-[18px] mt-[32px] items-center md:ml-[122px] lg:ml-0 lg:mt-[48px]">
               <div className="flex">
@@ -52,7 +90,10 @@ const Banner = () => {
                 </p>
               </div>
             </div>
-            <button className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md flex items-center gap-x-[16px] lg:w-fit">
+            <button
+              onClick={() => navigate("/pricing")}
+              className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md flex items-center gap-x-[16px] lg:w-fit transform hover:scale-110 transition duration-150 ease-in-out"
+            >
               <span className="text-[18px] leading-[21px] text-white">
                 Learn More
               </span>

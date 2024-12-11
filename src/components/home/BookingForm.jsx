@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import user from "../../assets/bookingForm/user.svg";
 import phone from "../../assets/bookingForm/phone.svg";
 import car from "../../assets/bookingForm/car.svg";
@@ -6,6 +6,7 @@ import date from "../../assets/bookingForm/date.svg";
 import clock from "../../assets/bookingForm/clock.svg";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { motion, useInView } from "motion/react";
 
 const BookingForm = () => {
   const today = new Date().toISOString().split("T")[0];
@@ -91,6 +92,7 @@ const BookingForm = () => {
 
   return (
     <section
+      data-aos="zoom-in"
       style={{ boxShadow: "0px 8px 26px 0px #3C98CC2B" }}
       className="mt-[26px] md:mt-[60px] border-[2px] rounded-xl"
     >
@@ -221,7 +223,7 @@ const BookingForm = () => {
         </p>
         <button
           type="submit"
-          className="px-[51px] py-[17px] bg-cw-primary rounded-md lg:w-fit text-white hover:bg-cw-secondary lg:text-[20px] font-medium md:w-fit"
+          className="px-[51px] py-[17px] bg-cw-primary rounded-md lg:w-fit text-white hover:bg-cw-secondary lg:text-[20px] font-medium md:w-fit transform hover:scale-110 transition duration-150 ease-in-out"
         >
           Réservation
         </button>

@@ -1,9 +1,10 @@
 import React from "react";
 import avatar from "../../assets/banner/avatar-3.png";
-import icon from "../../assets/review-icon.png";
 import { GoArrowRight } from "react-icons/go";
+import { useNavigate } from "react-router";
 
 const Review = () => {
+  const navigate = useNavigate();
   return (
     <section className="mt-[60px] lg:mt-[120px]">
       <div className="lg:flex lg:items-center">
@@ -17,7 +18,10 @@ const Review = () => {
             Découvrez ce que nos clients disent de nous et pourquoi ils nous
             font confiance pour le lavage de leur véhicule.
           </p>
-          <button className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md lg:flex items-center gap-x-[16px] hidden">
+          <button
+            onClick={() => navigate("/pricing")}
+            className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md lg:flex items-center gap-x-[16px] hidden transform hover:scale-110 transition duration-150 ease-in-out"
+          >
             <span className="text-[18px] leading-[21px] text-white">
               Learn More
             </span>
@@ -26,7 +30,12 @@ const Review = () => {
             </span>
           </button>
         </div>
-        <div className="bg-cw-primary mt-8 lg:mt-0 px-[30px] pt-[38px] pb-12 flex flex-col items-center lg:items-start rounded-[20px] lg:min-h-max">
+        <div
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+          className="bg-cw-primary mt-8 lg:mt-0 px-[30px] pt-[38px] pb-12 flex flex-col items-center lg:items-start rounded-[20px] lg:min-h-max"
+        >
           <div className="mb-8 lg:h-full">
             <p className="text-center text-white">
               Excellent service et résultats impeccables. Ma voiture brille

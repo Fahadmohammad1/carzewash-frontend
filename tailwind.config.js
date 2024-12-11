@@ -11,9 +11,9 @@ export default {
         'cw-secondary': "#0E252F",
       },
       fontFamily: {
-        'cw-primary': ['CREATO', 'cursive'],
-        'cw-medium': ['CREATO MEDIUM', 'mono'],
-        'cw-regular': ['CREATO REGULAR', 'sans serif']
+        'cw-primary': ['CREATO'],
+        'cw-medium': ['CREATO MEDIUM',],
+        'cw-regular': ['CREATO REGULAR',]
       },
       animation: {
         slide: "slide 20s linear infinite",

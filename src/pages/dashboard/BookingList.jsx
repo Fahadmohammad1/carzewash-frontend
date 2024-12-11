@@ -40,22 +40,29 @@ const BookingList = () => {
   return (
     <section>
       <div className="bg-white">
-        <div className="p-6 overflow-scroll">
+        <div className="p-6 pt-0 overflow-scroll">
           <table className="w-full min-w-max table-auto text-left">
-            <thead>
+            <thead className="border-b">
               <tr>
                 <th>
-                  <input type="checkbox" name="" id="" />
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="border border-[#000AFF] rounded-md p-4"
+                  />
+                </th>
+                <th className="p-4 flex gap-x-2 text-[#8A92A6] items-center">
+                  <p className="block antialiased font-sans text-sm font-normal">
+                    Users
+                  </p>
+                  <IoArrowDownOutline />
                 </th>
                 <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
                   <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
-                    Transaction
+                    Car Model
                   </p>
-                </th>
-                <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
-                  <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
-                    Amount
-                  </p>
+                  <IoArrowDownOutline />
                 </th>
                 <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
                   <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
@@ -64,16 +71,13 @@ const BookingList = () => {
                 </th>
                 <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
                   <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
-                    Status
+                    Time
                   </p>
                 </th>
                 <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
                   <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
-                    Account
+                    Package
                   </p>
-                </th>
-                <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
-                  <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70"></p>
                 </th>
               </tr>
             </thead>

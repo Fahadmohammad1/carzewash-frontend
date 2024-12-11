@@ -1,10 +1,15 @@
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
 import background from "../../assets/banner-bg.png";
+import { useNavigate } from "react-router";
 
 const QualityBanner = () => {
+  const navigate = useNavigate();
   return (
     <section
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -24,7 +29,10 @@ const QualityBanner = () => {
         guarantee that your car will be sparkling after every wash.
       </p>
       <div className="flex justify-center">
-        <button className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md flex items-center gap-x-[16px]">
+        <button
+          onClick={() => navigate("/pricing")}
+          className="px-[30px] py-[12px] bg-cw-primary mt-10 rounded-md flex items-center gap-x-[16px] transform hover:scale-110 transition duration-150 ease-in-out"
+        >
           <span className="text-[18px] leading-[21px] text-white">
             Learn More
           </span>

@@ -63,7 +63,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end hidden lg:flex w-fit">
-        <button className="px-[51px] py-[17px] bg-cw-primary rounded-lg text-white text-[20px] font-medium hover:bg-cw-secondary">
+        <button
+          onClick={() => navigate("/booking")}
+          className="px-[51px] py-[17px] bg-cw-primary rounded-lg text-white text-[20px] font-medium hover:bg-cw-secondary transform hover:scale-110 transition duration-150 ease-in-out"
+        >
           Réservation
         </button>
       </div>

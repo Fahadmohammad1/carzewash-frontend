@@ -56,12 +56,14 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-center hidden lg:flex mx-auto">
-        <ul className="menu menu-horizontal px-1 flex gap-x-10">
+        <ul className="px-1 flex gap-x-10">
           <li>
             <Link
               to="/"
-              className={`font-medium text-[20px] leading-[23px] hover:bg-cw-secondary rounded-lg hover:text-white ${
-                isActive("/") ? "bg-cw-primary" : "bg-transparent"
+              className={`font-medium text-[20px] leading-[23px] text-cw-primary rounded-lg hover:text-opacity-100 ${
+                isActive("/")
+                  ? "text-opacity-100"
+                  : "text-cw-secondary opacity-40"
               }`}
             >
               Accueil
@@ -70,8 +72,10 @@ const Navbar = () => {
           <li>
             <Link
               to="/pricing"
-              className={`font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white ${
-                isActive("/pricing") ? "bg-cw-primary" : "bg-transparent"
+              className={`font-medium text-[20px] leading-[23px] text-cw-primary rounded-lg hover:text-opacity-100 ${
+                isActive("/pricing")
+                  ? "text-opacity-100"
+                  : "text-cw-secondary text-opacity-40"
               }`}
             >
               Tarification
@@ -79,8 +83,10 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              className={`font-medium text-[20px] leading-[23px] text-cw-secondary text-opacity-40 hover:bg-cw-secondary rounded-lg hover:text-white ${
-                isActive("/pricing") ? "bg-cw-primary" : "bg-transparent"
+              className={`font-medium text-[20px] leading-[23px] text-cw-primary rounded-lg hover:text-opacity-100 ${
+                isActive("/contact")
+                  ? "text-opacity-100"
+                  : "text-cw-secondary text-opacity-40"
               }`}
               to="/contact"
             >

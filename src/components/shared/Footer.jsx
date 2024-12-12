@@ -51,11 +51,11 @@ const Footer = () => {
         </div>
         <div className="mt-10 lg:mt-0">
           <h4 className="font-bold text-2xl text-cw-primary leading-7">
-            Booking Time
+            Réservation
           </h4>
           <p className="mt-5 text-white flex gap-x-3 items-center leading-[26px]">
             <LuClock4 className="text-[20px]" />
-            9AM - 3PM
+            9h - 15h
           </p>
           <p className="mt-5 text-white">fermé sam et dim</p>
         </div>

@@ -103,6 +103,14 @@ const Sidebar = () => {
               <FaUsers /> Contact List
             </Link>
           </li>
+          <li>
+            <Link
+              to="/"
+              className="font-cw-regular w-full rounded-none flex justify-center"
+            >
+              <FaUsers /> Home
+            </Link>
+          </li>
 
           <div className="mt-auto mb-24 mx-auto lg:flex flex-col">
             <button

@@ -143,7 +143,7 @@ const Banner = ({ handleScrollToPricing }) => {
                 <img
                   key={index}
                   src={image.src}
-                  className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full cursor-pointer"
+                  className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full cursor-pointer hover:border-2 border-cw-primary"
                   alt={image.alt}
                   onClick={() => handleImageClick(image, index)}
                 />

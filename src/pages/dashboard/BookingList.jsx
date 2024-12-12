@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { IoArrowDownOutline } from "react-icons/io5";
 import userAvatar2 from "../../assets/user-avatar2.svg";
 import toast from "react-hot-toast";
 import Loader from "../../components/shared/Loader";
+import user from "../../assets/dashboard/user.svg";
+import car from "../../assets/dashboard/car-m.svg";
+import date from "../../assets/dashboard/date-m.svg";
+import formula from "../../assets/dashboard/formula-m.svg";
 
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
@@ -49,94 +52,106 @@ const BookingList = () => {
                     type="checkbox"
                     name=""
                     id=""
-                    className="border border-[#000AFF] rounded-md p-4"
+                    className="appearance-none size-[20px] border border-[#000AFF] rounded-md mt-1"
                   />
                 </th>
                 <th className="p-4 text-[#8A92A6]">
-                  <p className="block antialiased font-sans text-sm font-normal">
+                  <p className="hidden lg:block antialiased font-sans text-sm font-normal">
                     Users
                   </p>
+                  <img
+                    className="lg:hidden size-6"
+                    src={user}
+                    alt="user icon"
+                  />
                 </th>
-                <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
-                  <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
+                <th className="p-4 text-[#8A92A6]">
+                  <p className="hidden lg:block antialiased font-sans text-sm font-normal">
                     Car Model
                   </p>
-                  <IoArrowDownOutline />
+                  <img className="lg:hidden size-6" src={car} alt="user icon" />
                 </th>
-                <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
-                  <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
+                <th className="p-4 text-[#8A92A6]">
+                  <p className="hidden lg:block antialiased font-sans text-sm font-normal">
                     Date
                   </p>
+                  <img
+                    className="lg:hidden size-6"
+                    src={date}
+                    alt="user icon"
+                  />
                 </th>
-                <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
-                  <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
+                <th className="p-4 text-[#8A92A6] hidden lg:block">
+                  <p className="hidden lg:block antialiased font-sans text-sm font-normal">
                     Time
                   </p>
                 </th>
-                <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
-                  <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">
-                    Package
+                <th className="p-4 text-[#8A92A6]">
+                  <p className="hidden lg:block antialiased font-sans text-sm font-normal">
+                    Formula
                   </p>
+                  <img
+                    className="lg:hidden size-6"
+                    src={formula}
+                    alt="user icon"
+                  />
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <input type="checkbox" name="" id="" />
-                </td>
-                <td className="p-4 border-b border-blue-gray-50">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src="https://docs.material-tailwind.com/img/logos/logo-spotify.svg"
-                      alt="Spotify"
-                      className="inline-block relative object-center w-12 h-12 rounded-lg border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
-                    />
-                    <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">
-                      Spotify
-                    </p>
-                  </div>
-                </td>
-                <td className="p-4 border-b border-blue-gray-50">
-                  <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
-                    $2,500
-                  </p>
-                </td>
-                <td className="p-4 border-b border-blue-gray-50">
-                  <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
-                    Wed 3:00pm
-                  </p>
-                </td>
-                <td className="p-4 border-b border-blue-gray-50">
-                  <div className="w-max">
-                    <div
-                      className="relative grid items-center font-sans font-bold uppercase whitespace-nowrap select-none bg-green-500/20 text-green-900 py-1 px-2 text-xs rounded-md"
-                      style={{ opacity: "1" }}
-                    >
-                      <span className="">paid</span>
-                    </div>
-                  </div>
-                </td>
-                <td className="p-4 border-b border-blue-gray-50">
-                  <div className="flex items-center gap-3">
-                    <div className="h-9 w-12 rounded-md border border-blue-gray-50 p-1">
-                      <img
-                        src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png"
-                        alt="visa"
-                        className="inline-block relative object-center rounded-md h-full w-full object-contain p-1"
+              {bookings.length &&
+                bookings?.map((booking) => (
+                  <tr key={booking.id}>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        className="appearance-none size-[20px] border border-[#000AFF] rounded-md mt-1"
                       />
-                    </div>
-                    <div className="flex flex-col">
-                      <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal capitalize">
-                        visa
+                    </td>
+                    <td className="p-4 border-b border-[#EAECF0]">
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={userAvatar2}
+                          alt="avatar"
+                          className="lg:inline-block hidden relative object-center size-10 rounded-full object-contain p-1"
+                        />
+                        <div className="flex flex-col">
+                          <p className="font-cw-regular text-[15px] text-[#101828]">
+                            {booking.fullName}
+                          </p>
+                          <p className="font-cw-regular text-[14px] text-[#667085]">
+                            {booking.phone}
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="p-4 border-b border-[#EAECF0]">
+                      <p className="font-cw-regular text-[15px] text-[#101828]">
+                        {booking.carModel}
                       </p>
-                      <p className="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal opacity-70">
-                        06/2026
+                    </td>
+                    <td className="p-4 border-b border-[#EAECF0]">
+                      <p className="font-cw-regular text-[15px] text-[#101828]">
+                        {booking.date}
                       </p>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+                      <p className="font-cw-regular text-[15px] text-[#101828] lg:hidden">
+                        {booking.time}
+                      </p>
+                    </td>
+                    <td className="p-4 border-b border-[#EAECF0]">
+                      <p className="font-cw-regular text-[15px] text-[#101828]">
+                        {booking.time}
+                      </p>
+                    </td>
+                    <td className="p-4 border-b border-[#EAECF0]">
+                      <p className="font-cw-regular text-[15px] text-[#101828]">
+                        {booking.formula}
+                      </p>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

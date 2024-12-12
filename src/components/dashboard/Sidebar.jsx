@@ -1,7 +1,7 @@
 import React from "react";
 import { FaUsers } from "react-icons/fa";
 import { GoChecklist } from "react-icons/go";
-import { Link, Outlet, useNavigate } from "react-router";
+import { Link, Outlet, useLocation, useNavigate } from "react-router";
 import avatar from "../../assets/user-avatar.svg";
 import arrow from "../../assets/arrow-icon.svg";
 import { CiUser } from "react-icons/ci";
@@ -10,6 +10,12 @@ import logout from "../../assets/logout.svg";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const isActive = (path) =>
+    location.pathname === path || location.pathname === `${path}/`;
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -83,48 +89,58 @@ const Sidebar = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu text-white min-h-full w-[255px] p-0 bg-cw-secondary">
+        <ul className="text-white min-h-full w-[255px] p-0 bg-cw-secondary flex flex-col justify-between">
           <p className="text-[46px] leading-[54px] text-center pt-10 pb-9 font-cw-regular">
             Admin
           </p>
           <li>
             <Link
               to="/dashboard"
-              className="font-cw-regular w-full rounded-none flex justify-center bg-cw-primary"
+              className={`font-cw-regular w-full rounded-none flex items-center  px-6 py-[18px] pl-8 ${
+                isActive("/dashboard")
+                  ? "bg-cw-primary text-cw-secondary"
+                  : "bg-cw-secondary text-white"
+              }`}
             >
-              <GoChecklist /> Booking List
+              <GoChecklist className="text-[18px] mr-[22px]" /> Booking List
             </Link>
           </li>
           <li>
             <Link
               to="/dashboard/contact"
-              className="font-cw-regular w-full rounded-none flex justify-center"
+              className={`font-cw-regular w-full rounded-none flex items-center bg-cw-primary px-6 py-[18px] pl-8 ${
+                isActive("/dashboard/contact")
+                  ? "bg-cw-primary text-cw-secondary"
+                  : "bg-cw-secondary text-white"
+              }`}
             >
-              <FaUsers /> Contact List
+              <FaUsers className="text-[18px] mr-[22px]" /> Contact List
             </Link>
           </li>
           <li>
             <Link
               to="/"
-              className="font-cw-regular w-full rounded-none flex justify-center"
+              className="font-cw-regular w-full rounded-none flex items-center px-6 py-[18px] pl-8"
             >
-              <FaUsers /> Home
+              <FaUsers className="text-[18px] mr-[22px]" />
+              Home
             </Link>
           </li>
 
-          <div className="mt-auto mb-24 mx-auto lg:flex flex-col">
+          <div className="mt-auto mb-24 mx-auto lg:flex flex-col px-[30px]">
             <button
               onClick={() => {
                 localStorage.removeItem("admin");
                 navigate("/");
               }}
-              className="px-[54px] py-[18px] bg-[#6AB4D44D] rounded-[12px]"
+              className="px-[54px] py-[18px] bg-[#6AB4D44D] rounded-[12px] flex items-center gap-x-3"
             >
+              <img src={logout} alt="logout icon" />
               Logout
             </button>
             <button
               onClick={() => document.getElementById("update_pass").showModal()}
-              className="text-white mt-2 mx-auto w-full"
+              className="text-white mt-2 mx-auto w-full hover:underline"
             >
               Update Password
             </button>

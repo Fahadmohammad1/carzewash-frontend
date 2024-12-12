@@ -3,7 +3,7 @@ import facebook from "../../assets/footer/Facebook.png";
 import instagram from "../../assets/footer/Instagram.png";
 import whatsapp from "../../assets/footer/Whatsapp.png";
 import { LuClock4 } from "react-icons/lu";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -36,18 +36,32 @@ const Footer = () => {
           <h4 className="font-bold text-2xl text-cw-primary leading-7">
             Navigation
           </h4>
-          <p className="mt-3 text-white">Accueil</p>
-          <p className="mt-3 text-white">Tarification</p>
-          <p className="mt-3 text-white">Contact</p>
-          <p className="mt-3 text-white">Réservation</p>
+          <Link to="/">
+            <p className="mt-3 text-white">Accueil</p>
+          </Link>
+          <Link to="/pricing">
+            <p className="mt-3 text-white">Tarification</p>
+          </Link>
+          <Link to="/contact">
+            <p className="mt-3 text-white">Contact</p>
+          </Link>
+          <Link to="/booking">
+            <p className="mt-3 text-white">Réservation</p>
+          </Link>
         </div>
         <div className="mt-10 lg:mt-0">
           <h4 className="font-bold text-2xl text-cw-primary leading-7">
             Services
           </h4>
-          <p className="mt-3 text-white">Classique</p>
-          <p className="mt-3 text-white">Premium</p>
-          <p className="mt-3 text-white">Prestige</p>
+          <Link to="/pricing">
+            <p className="mt-3 text-white">Classique</p>
+          </Link>
+          <Link to="/pricing">
+            <p className="mt-3 text-white">Premium</p>
+          </Link>
+          <Link to="/pricing">
+            <p className="mt-3 text-white">Prestige</p>
+          </Link>
         </div>
         <div className="mt-10 lg:mt-0">
           <h4 className="font-bold text-2xl text-cw-primary leading-7">

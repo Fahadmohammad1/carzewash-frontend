@@ -52,11 +52,10 @@ const BookingList = () => {
                     className="border border-[#000AFF] rounded-md p-4"
                   />
                 </th>
-                <th className="p-4 flex gap-x-2 text-[#8A92A6] items-center">
+                <th className="p-4 text-[#8A92A6]">
                   <p className="block antialiased font-sans text-sm font-normal">
                     Users
                   </p>
-                  <IoArrowDownOutline />
                 </th>
                 <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
                   <p className="block antialiased font-sans text-sm text-blue-gray-900 font-normal leading-none opacity-70">

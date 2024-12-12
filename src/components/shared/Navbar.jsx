@@ -17,7 +17,10 @@ const Navbar = () => {
 
   return (
     <section className="navbar mb-[40px] mt-6 px-5 md:px-10 lg:px-[104px] lg:mb-[80px]">
-      <div onClick={() => navigate("/")} className="flex-1 lg:flex-none">
+      <div
+        onClick={() => navigate("/")}
+        className="flex-1 lg:flex-none cursor-pointer"
+      >
         <img src={logo} className="w-[67px] lg:w-[110px]" alt="logo" />
       </div>
       <div className="flex-none lg:hidden">

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import blackCar3 from "../../assets/banner/black-car.jpeg";
-import wahsingCar1 from "../../assets/banner/washing-car-1.png";
-import insideCar1 from "../../assets/banner/inside-car-1.png";
-import wahsingCar2 from "../../assets/banner/washing-car-2.png";
-import insideCar2 from "../../assets/banner/inside-car-2.png";
+import wahsingCar1 from "../../assets/banner/washing-car-1.jpg";
+import insideCar1 from "../../assets/banner/inside-car-1.jpg";
+import wahsingCar2 from "../../assets/banner/washing-car-2.jpg";
+import insideCar2 from "../../assets/banner/inside-car-2.jpg";
 import avatar1 from "../../assets/banner/avatar-1.png";
 import avatar2 from "../../assets/banner/avatar-2.png";
 import avatar3 from "../../assets/banner/avatar-3.png";
@@ -12,6 +12,27 @@ import topBackground from "../../assets/banner/top-bg.jpg";
 import { motion } from "motion/react";
 
 const Banner = ({ handleScrollToPricing }) => {
+  const [mainImage, setMainImage] = useState({
+    src: blackCar3,
+    alt: "black car",
+  });
+
+  const [smallImages, setSmallImages] = useState([
+    { src: wahsingCar1, alt: "washing car 1" },
+    { src: insideCar1, alt: "inside car 1" },
+    { src: wahsingCar2, alt: "washing car 2" },
+    { src: insideCar2, alt: "inside car 2" },
+  ]);
+
+  const handleImageClick = (clickedImage, index) => {
+    const newMainImage = { ...mainImage };
+    setMainImage(clickedImage);
+
+    const updatedSmallImages = [...smallImages];
+    updatedSmallImages[index] = newMainImage;
+    setSmallImages(updatedSmallImages);
+  };
+
   const variants2 = {
     hidden: { y: -25, opacity: 0 },
     visible: { y: 0, opacity: 1 },
@@ -42,13 +63,15 @@ const Banner = ({ handleScrollToPricing }) => {
             whileInView="visible"
             viewport={{ once: false }}
             transition={{ duration: 2, ease: "easeInOut" }}
-            className="text-[30px] md:text-[52px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary"
+            className=""
           >
-            <span className="text-cw-primary">L’art de sublimer</span>
+            <span className="text-cw-primary text-[30px] md:text-[44px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
+              L’art de sublimer votre
+            </span>
             <br />
-            <span className="text-cw-secondary">votre voiture</span>
-            <br />
-            <span className="text-cw-secondary">commence ici</span>
+            <span className="text-cw-secondary text-[30px] md:text-[42px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
+              voiture commence ici
+            </span>
           </motion.h1>
           <motion.p
             variants={variants2}
@@ -107,35 +130,24 @@ const Banner = ({ handleScrollToPricing }) => {
 
         <div className="flex justify-center lg:justify-start mt-8 lg:mt-0">
           <div className="lg:flex gap-x-5">
-            <div className="">
+            <div>
               <img
-                src={blackCar3}
+                src={mainImage.src}
                 className="rounded-xl lg:h-full lg:w-[500px]"
-                alt="black car"
+                alt={mainImage.alt}
               />
             </div>
 
             <div className="flex lg:flex-col gap-y-6 justify-between md:justify-center lg:justify-normal md:gap-x-6 mt-3 lg:mt-0 md:mt-6 ">
-              <img
-                src={wahsingCar1}
-                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
-                alt="washing car 1"
-              />
-              <img
-                src={insideCar1}
-                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
-                alt="inside car 1"
-              />
-              <img
-                src={wahsingCar2}
-                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
-                alt="washing car 2"
-              />
-              <img
-                src={insideCar2}
-                className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full"
-                alt="inside car 2"
-              />
+              {smallImages.map((image, index) => (
+                <img
+                  key={index}
+                  src={image.src}
+                  className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full cursor-pointer"
+                  alt={image.alt}
+                  onClick={() => handleImageClick(image, index)}
+                />
+              ))}
             </div>
           </div>
         </div>

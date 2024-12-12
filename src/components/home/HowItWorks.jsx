@@ -52,11 +52,11 @@ const HowItWorks = () => {
         transition={{ duration: 2, ease: "easeInOut" }}
         className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center p-8 lg:p-0 md:px-20 lg:text-start lg:text-[52px] lg:leading-[80px] font-cw-primary tracking-wide "
       >
-        <span className="text-cw-secondary text-wrap">
+        <span className="text-cw-secondary text-wrap lg:text-nowrap">
           Comment ça fonctionne pour
         </span>
         <br />
-        <span className="text-cw-primary text-wrap">
+        <span className="text-cw-primary text-wrap lg:text-nowrap">
           faire briller la voiture
         </span>
       </motion.h1>

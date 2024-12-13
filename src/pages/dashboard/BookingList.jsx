@@ -140,7 +140,7 @@ const BookingList = () => {
                         {booking.time}
                       </p>
                     </td>
-                    <td className="p-4 border-b border-[#EAECF0]">
+                    <td className="p-4 border-b border-[#EAECF0] hidden lg:table-cell">
                       <p className="font-cw-regular text-[15px] text-[#101828]">
                         {booking.time}
                       </p>

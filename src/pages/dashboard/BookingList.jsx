@@ -44,8 +44,8 @@ const BookingList = () => {
     <section>
       <div className="bg-white">
         <div className="p-6 pt-0 overflow-scroll">
-          <table className="w-full min-w-max table-auto text-left">
-            <thead className="border-b">
+          <table className="w-full min-w-max table-auto text-left ">
+            <thead className="border-b font-cw-regular">
               <tr>
                 <th>
                   <input
@@ -118,7 +118,7 @@ const BookingList = () => {
                           className="lg:inline-block hidden relative object-center size-10 rounded-full object-contain p-1"
                         />
                         <div className="flex flex-col">
-                          <p className="font-cw-regular text-[15px] text-[#101828]">
+                          <p className="font-cw-regular text-[15px] text-[#101828] ">
                             {booking.fullName}
                           </p>
                           <p className="font-cw-regular text-[14px] text-[#667085]">

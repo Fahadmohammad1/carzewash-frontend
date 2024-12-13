@@ -77,9 +77,18 @@ const Sidebar = () => {
               </div>
             </div>
           </div>
-          <p className="bg-cw-primary px-[14px] py-[10px] font-cw-regular flex items-center gap-x-2 text-white max-w-fit border rounded-lg my-10">
-            <CiUser className="text-lg" /> Users Booking
-          </p>
+          <div className="flex justify-between items-center">
+            <p className="bg-cw-primary px-[14px] py-[10px] font-cw-regular flex items-center gap-x-2 text-white max-w-fit border rounded-lg my-10">
+              <CiUser className="text-lg" /> Users Booking
+            </p>
+            <select
+              className="py-[10px] px-[14px] border rounded-lg bg-white outline-none text-cw-secondary text-opacity-60"
+              name=""
+              id=""
+            >
+              <option value="15">Last 15 days</option>
+            </select>
+          </div>
           <Outlet />
         </div>
       </div>

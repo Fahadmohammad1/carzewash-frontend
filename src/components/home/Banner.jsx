@@ -65,11 +65,11 @@ const Banner = ({ handleScrollToPricing }) => {
             transition={{ duration: 2, ease: "easeInOut" }}
             className=""
           >
-            <span className="text-cw-primary text-[30px] md:text-[44px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
+            <span className="text-cw-primary text-[24px] md:text-[44px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
               L’art de sublimer votre
             </span>
             <br />
-            <span className="text-cw-secondary text-[30px] md:text-[42px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
+            <span className="text-cw-secondary text-[24px] md:text-[42px] leading-[48px] md:leading-[68px] font-bold tracking-wide font-cw-primary">
               voiture commence ici
             </span>
           </motion.h1>
@@ -79,7 +79,7 @@ const Banner = ({ handleScrollToPricing }) => {
             whileInView="visible"
             viewport={{ once: false }}
             transition={{ duration: 2, ease: "easeInOut" }}
-            className="text-base leading-[24px] mt-[12px]"
+            className="text-base leading-[24px] mt-[12px] hyphens-auto"
           >
             Votre voiture mérite le meilleur, et vous aussi ! Grâce à notre
             service de nettoyage automobile à domicile sur Ajaccio, bénéficiez

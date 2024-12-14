@@ -6,7 +6,6 @@ import date from "../../assets/bookingForm/date.svg";
 import clock from "../../assets/bookingForm/clock.svg";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { motion, useInView } from "motion/react";
 import Loader from "../shared/Loader";
 
 const BookingForm = () => {
@@ -67,13 +66,16 @@ const BookingForm = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/booking/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bookingInfo),
-      });
+      const res = await fetch(
+        "https://carzewash-backend.vercel.app/api/booking/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingInfo),
+        }
+      );
 
       if (res.ok) {
         toast.success("Booking Successfull");
@@ -106,121 +108,147 @@ const BookingForm = () => {
         className="px-5 md:px-8 py-8 flex flex-col gap-y-4 md:gap-y-6"
       >
         <div className="flex flex-col gap-y-4 lg:gap-y-0 lg:flex-row lg:gap-x-6">
-          <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 lg:w-full">
-            <img src={user} className="lg:w-[26px] opacity-40" alt="icon" />
-            <input
-              {...register("fullName", { required: true })}
-              type="text"
-              className="outline-none placeholder-cw-secondary placeholder-opacity-60"
-              name="fullName"
-              id="fullName"
-              placeholder="Votre nom complet"
-            />
-          </label>
-          {errors.fullName && (
-            <span className="text-red-400">Name is required</span>
-          )}
+          <div>
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 lg:w-full">
+              <img src={user} className="lg:w-[26px] opacity-40" alt="icon" />
+              <input
+                {...register("fullName", { required: true })}
+                type="text"
+                className="outline-none placeholder-cw-secondary placeholder-opacity-60"
+                name="fullName"
+                id="fullName"
+                placeholder="Votre nom complet"
+              />
+            </label>
+            {errors.fullName && (
+              <span className="text-red-400 block mt-2">Name is required</span>
+            )}
+          </div>
 
           {/* phone */}
           <div className="flex flex-col gap-y-4 md:flex-row md:gap-x-5 lg:gap-x-6 md:gap-y-6">
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 md:w-full lg:w-[260px]">
-              <img src={phone} className="lg:w-[20px] opacity-40" alt="icon" />
-              <input
-                {...register("phone", { required: true })}
-                type="number"
-                className="outline-none placeholder-cw-secondary placeholder-opacity-60"
-                name="phone"
-                id="phone"
-                placeholder="téléphone"
-              />
-            </label>
-            {errors.phone && (
-              <span className="text-red-400">Téléphone is required</span>
-            )}
+            <div>
+              <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 md:w-full lg:w-[260px]">
+                <img
+                  src={phone}
+                  className="lg:w-[20px] opacity-40"
+                  alt="icon"
+                />
+                <input
+                  {...register("phone", { required: true })}
+                  type="number"
+                  className="outline-none placeholder-cw-secondary placeholder-opacity-60"
+                  name="phone"
+                  id="phone"
+                  placeholder="téléphone"
+                />
+              </label>
+              {errors.phone && (
+                <span className="text-red-400 block mt-2">
+                  Téléphone is required
+                </span>
+              )}
+            </div>
 
             {/* car model */}
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 md:w-full">
-              <img src={car} className="lg:w-[20px] opacity-40" alt="icon" />
-              <input
-                {...register("carModel", { required: true })}
-                type="text"
-                className="outline-none placeholder-cw-secondary placeholder-opacity-60"
-                name="carModel"
-                id="carModel"
-                placeholder="modèle de voiture"
-              />
-            </label>
-            {errors.carModel && (
-              <span className="text-red-400">Name is required</span>
-            )}
+            <div>
+              <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 md:w-full">
+                <img src={car} className="lg:w-[20px] opacity-40" alt="icon" />
+                <input
+                  {...register("carModel", { required: true })}
+                  type="text"
+                  className="outline-none placeholder-cw-secondary placeholder-opacity-60"
+                  name="carModel"
+                  id="carModel"
+                  placeholder="modèle de voiture"
+                />
+              </label>
+              {errors.carModel && (
+                <span className="text-red-400 block mt-2">
+                  Car Model is required
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
         {/* booking date */}
         <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-x-6">
           <div className="flex flex-col gap-y-4 md:flex-row gap-x-4 md:gap-x-5">
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
-              <img
-                src={date}
-                className="lg:w-[20px] opacity-40"
-                alt="date icon"
-              />
-              <input
-                {...register("date", { required: true })}
-                type="date"
-                className="outline-none w-full lg:w-full md:w-full text-cw-secondary text-opacity-60"
-                name="date"
-                id="date"
-                min={today}
-                placeholder="Booking Date"
-              />
-            </label>
-            {errors.date && (
-              <span className="text-red-400">Date is required</span>
-            )}
+            <div>
+              <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
+                <img
+                  src={date}
+                  className="lg:w-[20px] opacity-40"
+                  alt="date icon"
+                />
+                <input
+                  {...register("date", { required: true })}
+                  type="date"
+                  className="outline-none w-full lg:w-full md:w-full text-cw-secondary text-opacity-60"
+                  name="date"
+                  id="date"
+                  min={today}
+                  placeholder="Booking Date"
+                />
+              </label>
+              {errors.date && (
+                <span className="text-red-400 block mt-2">
+                  Date is required
+                </span>
+              )}
+            </div>
 
             {/* Time */}
-            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
-              <img
-                src={clock}
-                className="lg:w-[20px] opacity-40"
-                alt="Clock Icon"
-              />
-              <select
-                {...register("time", { required: true })}
-                className="border-0 w-full text-cw-secondary text-opacity-60 focus:outline-none bg-white"
-              >
-                <option value="" disabled>
-                  Select Time
-                </option>
-                {timeOptions.map((time, i) => (
-                  <option key={i} value={time}>
-                    {time}
+            <div>
+              <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
+                <img
+                  src={clock}
+                  className="lg:w-[20px] opacity-40"
+                  alt="Clock Icon"
+                />
+                <select
+                  {...register("time", { required: true })}
+                  className="border-0 w-full text-cw-secondary text-opacity-60 focus:outline-none bg-white"
+                >
+                  <option value="" disabled>
+                    Select Time
                   </option>
-                ))}
-              </select>
-            </label>
-            {errors.time && (
-              <span className="text-red-400">Time is required</span>
-            )}
+                  {timeOptions.map((time, i) => (
+                    <option key={i} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              {errors.time && (
+                <span className="text-red-400 block mt-2">
+                  Time is required
+                </span>
+              )}
+            </div>
           </div>
 
           {/* Package */}
-          <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
-            <select
-              className="border-0 w-full text-cw-secondary text-opacity-60 focus:outline-none bg-white"
-              {...register("formula", { required: true })}
-            >
-              <option value="Classique" defaultChecked>
-                Formule Classique
-              </option>
-              <option value="Premium">Formule Premium</option>
-              <option value="Prestige">Formule Prestige</option>
-            </select>
-          </label>
-          {errors.formula && (
-            <span className="text-red-400">Formule is required</span>
-          )}
+          <div>
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
+              <select
+                className="border-0 w-full text-cw-secondary text-opacity-60 focus:outline-none bg-white"
+                {...register("formula", { required: true })}
+              >
+                <option value="Classique" defaultChecked>
+                  Formule Classique
+                </option>
+                <option value="Premium">Formule Premium</option>
+                <option value="Prestige">Formule Prestige</option>
+              </select>
+            </label>
+            {errors.formula && (
+              <span className="text-red-400 block mt-2">
+                Formule is required
+              </span>
+            )}
+          </div>
         </div>
 
         <p className="mb-8 text-gray-400 italic font-cw-regular">

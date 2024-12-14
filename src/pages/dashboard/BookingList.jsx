@@ -17,7 +17,7 @@ const BookingList = () => {
       setLoading(true);
       try {
         await fetch(
-          `http://localhost:5000/api/booking?phone=${phone}&email=${email}&password=${password}`
+          `https://carzewash-backend.vercel.app/api/booking?phone=${phone}&email=${email}&password=${password}`
         )
           .then((res) => res.json())
           .then((data) => {

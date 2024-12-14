@@ -30,7 +30,7 @@ const Login = () => {
     setError(null);
 
     try {
-      await fetch("http://localhost:5000/api/admin/login", {
+      await fetch("https://carzewash-backend.vercel.app/api/admin/login", {
         method: "POST",
         body: loginInfo,
       })

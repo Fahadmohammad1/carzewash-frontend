@@ -129,21 +129,21 @@ const Banner = ({ handleScrollToPricing }) => {
         </div>
 
         <div className="flex justify-center lg:justify-start mt-8 lg:mt-0">
-          <div className="lg:flex gap-x-5">
+          <div className="lg:flex flex-col gap-y-5">
             <div>
               <img
                 src={mainImage.src}
-                className="rounded-xl lg:h-full lg:w-[500px]"
+                className="rounded-xl lg:w-full lg:h-min"
                 alt={mainImage.alt}
               />
             </div>
 
-            <div className="flex lg:flex-col gap-y-6 justify-between md:justify-center lg:justify-normal md:gap-x-6 mt-3 lg:mt-0 md:mt-6 ">
+            <div className="flex gap-y-6 justify-between md:justify-center lg:justify-normal md:gap-x-[18px] mt-3 lg:mt-0 md:mt-6 lg:w-full">
               {smallImages.map((image, index) => (
                 <img
                   key={index}
                   src={image.src}
-                  className="rounded-[4px] w-[74px] md:w-[120px] lg:h-full cursor-pointer hover:border-2 border-cw-primary"
+                  className="rounded-[4px] w-[74px] md:w-[120px] mx-auto cursor-pointer hover:border-2 border-cw-primary lg:h-[80px]"
                   alt={image.alt}
                   onClick={() => handleImageClick(image, index)}
                 />

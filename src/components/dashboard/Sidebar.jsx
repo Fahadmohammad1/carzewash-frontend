@@ -86,7 +86,7 @@ const Sidebar = () => {
               name=""
               id=""
             >
-              <option value="15">Last 15 days</option>
+              <option value="15">Latest 15 Bookings</option>
             </select>
           </div>
           <Outlet />

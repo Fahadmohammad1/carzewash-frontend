@@ -8,8 +8,47 @@ import location from "../assets/contact/location.svg";
 import email from "../assets/contact/email.svg";
 import user from "../assets/bookingForm/user.svg";
 import phone2 from "../assets/bookingForm/phone.svg";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
+import Loader from "../components/shared/Loader";
+import toast from "react-hot-toast";
 
 const Contact = () => {
+  const { isPending, isSuccess, isError, mutate, error } = useMutation({
+    mutationFn: async (newContact) => {
+      return await axios.post(
+        "https://carzewash-backend.vercel.app/api/contact/create",
+        newContact
+      );
+    },
+  });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = async (formData) => {
+    const { name, phone, email, message } = formData;
+    mutate({ name, phone, email, message });
+  };
+
+  if (isPending) return <Loader />;
+  if (isSuccess) {
+    toast.success("Message sent successfully");
+    reset();
+  }
+  if (isError) {
+    toast.error("Failed to sent message, please try again");
+  }
+
+  if (error) {
+    toast.error(error.message);
+  }
+
   return (
     <section className="md:px-10 lg:px-[104px]">
       <h1 className="font-black text-[28px] lg:text-[52px] leading-[42px] lg:leading-[80px] text-center mt-[47px] mb-8 px-10 font-cw-primary">
@@ -52,14 +91,18 @@ const Contact = () => {
           </div>
         </div>
         <div>
-          <div className="px-5 md:px-0 py-8 lg:pt-3 flex flex-col gap-y-4 md:gap-y-6">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="px-5 md:px-0 py-8 lg:pt-3 flex flex-col gap-y-4 md:gap-y-6"
+          >
             <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] ">
               <img className="opacity-40" src={user} alt="" />
               <input
+                {...register("name", { required: true })}
                 type="text"
                 className="outline-none placeholder-cw-secondary placeholder-opacity-60"
-                name="fullname"
-                id="fullname"
+                name="name"
+                id="name"
                 placeholder="Votre nom complet"
               />
             </label>
@@ -67,6 +110,7 @@ const Contact = () => {
               <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:w-full">
                 <img className="opacity-40" src={email} alt="" />
                 <input
+                  {...register("email", { required: true })}
                   type="email"
                   className="outline-none placeholder-cw-secondary placeholder-opacity-60"
                   name="email"
@@ -77,6 +121,7 @@ const Contact = () => {
               <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:w-full">
                 <img className="opacity-40" src={phone2} alt="" />
                 <input
+                  {...register("phone", { required: true })}
                   type="phone"
                   className="outline-none placeholder-cw-secondary placeholder-opacity-60"
                   name="phone"
@@ -86,17 +131,19 @@ const Contact = () => {
               </label>
             </div>
             <textarea
+              {...register("message", { required: true })}
               className="rounded-[10px] border-[2px] pt-3 pb-10 px-[18px] outline-none text-cw-secondary opacity-60 border-[#14141433]"
               name="message"
               id="message"
               placeholder=""
+            ></textarea>
+            <button
+              type="submit"
+              className="px-[51px] py-[17px] bg-cw-primary rounded-md mt-4 lg:w-fit font-cw-medium text-[20px] text-white hover:bg-cw-secondary transform hover:scale-110 transition duration-150 ease-in-out"
             >
-              Écrivez votre message.......
-            </textarea>
-            <button className="px-[51px] py-[17px] bg-cw-primary rounded-md mt-4 lg:w-fit font-cw-medium text-[20px] text-white hover:bg-cw-secondary transform hover:scale-110 transition duration-150 ease-in-out">
               Contact
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </section>

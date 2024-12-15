@@ -3,7 +3,7 @@ import facebook from "../../assets/footer/Facebook.svg";
 import instagram from "../../assets/footer/Instagram.svg";
 import whatsapp from "../../assets/footer/Whatsapp.svg";
 import { LuClock4 } from "react-icons/lu";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (

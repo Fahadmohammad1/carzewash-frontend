@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router";
 const Footer = () => {
   return (
     <section className="bg-cw-secondary px-5 lg:px-0 mt-[40px] pt-[60px] lg:pt-[75px] pb-5 lg:pb-0">
-      <div className="lg:flex lg:gap-x-[118px] lg:px-[104px] ">
+      <nav className="lg:flex lg:gap-x-[118px] lg:px-[104px] ">
         <div>
           <h2 className="text-[24px] leading-[36px] font-bold text-center text-white lg:text-start">
             Lavez votre voiture avec Carzewash!
@@ -35,21 +35,21 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="mt-[60px] lg:mt-0">
+        <div className="mt-[60px] lg:mt-0 lg:flex flex-col">
           <h4 className="font-bold text-2xl text-cw-primary leading-7">
             Navigation
           </h4>
-          <Link to="/">
-            <p className="mt-3 text-white">Accueil</p>
+          <Link className="mt-3 text-white" to="/">
+            Accueil
           </Link>
-          <Link to="/pricing">
-            <p className="mt-3 text-white">Tarification</p>
+          <Link className="mt-3 text-white" to="/pricing">
+            Tarification
           </Link>
-          <Link to="/contact">
-            <p className="mt-3 text-white">Contact</p>
+          <Link className="mt-3 text-white" to="/contact">
+            Contact
           </Link>
-          <Link to="/booking">
-            <p className="mt-3 text-white">Réservation</p>
+          <Link className="mt-3 text-white" to="/booking">
+            Réservation
           </Link>
         </div>
         <div className="mt-10 lg:mt-0">
@@ -76,7 +76,7 @@ const Footer = () => {
           </p>
           <p className="mt-5 text-white">fermé sam et dim</p>
         </div>
-      </div>
+      </nav>
       <p className="text-[14px] leading-6 mt-10 lg:bg-white lg:text-center lg:text-cw-secondary lg:opacity-70 lg:py-4 text-white opacity-70">
         © 2024 CARZEWASH • Tous droits réservés
       </p>

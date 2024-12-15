@@ -10,6 +10,10 @@ import Review from "../components/home/Review";
 import Benifits from "../components/home/Benifits";
 
 const Home = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
   const pricingRef = useRef(null);
 
   const handleScrollToPricing = () => {

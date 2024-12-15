@@ -16,6 +16,11 @@ import toast from "react-hot-toast";
 import { queryClient } from "../main";
 
 const Contact = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
   const { isPending, isSuccess, isError, mutate, error } = useMutation({
     mutationFn: async (newContact) => {
       return await axios.post(

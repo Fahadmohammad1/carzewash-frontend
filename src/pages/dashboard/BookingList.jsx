@@ -6,6 +6,9 @@ import user from "../../assets/dashboard/user.svg";
 import car from "../../assets/dashboard/car-m.svg";
 import date from "../../assets/dashboard/date-m.svg";
 import formula from "../../assets/dashboard/formula-m.svg";
+import trash from "../../assets/dashboard/trash-2.svg";
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
 
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
@@ -35,6 +38,40 @@ const BookingList = () => {
     };
     getBookings();
   }, []);
+
+  // Delete a contact
+  const {
+    mutate,
+    isPending: isDeletePending,
+    isSuccess: isDeleteSuccess,
+    isError: isDeleteError,
+    error: deleteError,
+  } = useMutation({
+    mutationFn: async (contactId) => {
+      return await axios.delete(
+        `https://carzewash-backend.vercel.app/api/booking/${contactId}?phone=${phone}&email=${email}&password=${password}`
+      );
+    },
+    onSuccess: () => {
+      toast.success("Booking deleted successfully");
+      // queryClient.invalidateQueries("contacts");
+    },
+    onError: (error) => {
+      toast.error(`Failed to delete booking: ${error?.message}`);
+    },
+  });
+
+  const handleDelete = (id) => {
+    const res = prompt("Are you sure? The message will be permanently deleted");
+
+    if (res !== null) {
+      mutate(id);
+    }
+  };
+
+  if (isDeletePending) return <Loader />;
+
+  if (deleteError) toast.error(deleteError?.message);
 
   if (loading) {
     return <Loader />;
@@ -149,6 +186,14 @@ const BookingList = () => {
                       <p className="font-cw-regular text-[15px] text-[#101828]">
                         {booking.formula}
                       </p>
+                    </td>
+                    <td className="p-4 border-b border-[#EAECF0]">
+                      <img
+                        className="cursor-pointer"
+                        onClick={() => handleDelete(booking.id)}
+                        src={trash}
+                        alt="trash icon"
+                      />
                     </td>
                   </tr>
                 ))}

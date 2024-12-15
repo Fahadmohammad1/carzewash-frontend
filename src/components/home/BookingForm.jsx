@@ -67,7 +67,7 @@ const BookingForm = () => {
 
     try {
       const res = await fetch(
-        "https://carzewash-backend.vercel.app/api/booking/create",
+        `${import.meta.env.VITE_BACKEND_URL}/booking/create`,
         {
           method: "POST",
           headers: {

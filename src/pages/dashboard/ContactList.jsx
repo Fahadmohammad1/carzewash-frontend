@@ -21,7 +21,9 @@ const ContactList = () => {
     queryKey: ["contacts"],
     queryFn: async () => {
       const res = await axios.get(
-        `https://carzewash-backend.vercel.app/api/contact?phone=${phone}&email=${email}&password=${password}`
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/contact?phone=${phone}&email=${email}&password=${password}`
       );
       return res.data.data;
     },
@@ -37,7 +39,9 @@ const ContactList = () => {
   } = useMutation({
     mutationFn: async (contactId) => {
       return await axios.delete(
-        `https://carzewash-backend.vercel.app/api/contact/${contactId}?phone=${phone}&email=${email}&password=${password}`
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/contact/${contactId}?phone=${phone}&email=${email}&password=${password}`
       );
     },
     onSuccess: () => {
@@ -98,7 +102,7 @@ const ContactList = () => {
               </tr>
             </thead>
             <tbody>
-              {data.length &&
+              {data?.length &&
                 data?.map((contact) => (
                   <tr key={contact.id}>
                     <td className="p-4 border-b border-[#EAECF0]">

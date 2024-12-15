@@ -29,7 +29,7 @@ const UpdatePassModal = () => {
 
     try {
       const res = await fetch(
-        "https://carzewash-backend.vercel.app/api/admin/update-password",
+        `${import.meta.env.VITE_BACKEND_URL}/admin/update-password`,
         {
           method: "PATCH",
           headers: {

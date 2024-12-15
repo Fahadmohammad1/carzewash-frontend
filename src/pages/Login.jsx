@@ -30,7 +30,7 @@ const Login = () => {
     setError(null);
 
     try {
-      await fetch("https://carzewash-backend.vercel.app/api/admin/login", {
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}/admin/login`, {
         method: "POST",
         body: loginInfo,
       })

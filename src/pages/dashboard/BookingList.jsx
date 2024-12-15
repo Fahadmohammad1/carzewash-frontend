@@ -20,7 +20,9 @@ const BookingList = () => {
       setLoading(true);
       try {
         await fetch(
-          `https://carzewash-backend.vercel.app/api/booking?phone=${phone}&email=${email}&password=${password}`
+          `${
+            import.meta.env.VITE_BACKEND_URL
+          }/booking?phone=${phone}&email=${email}&password=${password}`
         )
           .then((res) => res.json())
           .then((data) => {
@@ -49,7 +51,9 @@ const BookingList = () => {
   } = useMutation({
     mutationFn: async (contactId) => {
       return await axios.delete(
-        `https://carzewash-backend.vercel.app/api/booking/${contactId}?phone=${phone}&email=${email}&password=${password}`
+        `${
+          import.meta.env.VITE_BACKEND_URL
+        }/booking/${contactId}?phone=${phone}&email=${email}&password=${password}`
       );
     },
     onSuccess: () => {

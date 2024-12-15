@@ -24,7 +24,7 @@ const Contact = () => {
   const { isPending, isSuccess, isError, mutate, error } = useMutation({
     mutationFn: async (newContact) => {
       return await axios.post(
-        "https://carzewash-backend.vercel.app/api/contact/create",
+        `${import.meta.env.VITE_BACKEND_URL}/contact/create`,
         newContact
       );
     },

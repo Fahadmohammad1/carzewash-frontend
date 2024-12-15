@@ -1,12 +1,11 @@
 import React from "react";
-import facebook from "../../assets/footer/Facebook.png";
-import instagram from "../../assets/footer/Instagram.png";
-import whatsapp from "../../assets/footer/Whatsapp.png";
+import facebook from "../../assets/footer/Facebook.svg";
+import instagram from "../../assets/footer/Instagram.svg";
+import whatsapp from "../../assets/footer/Whatsapp.svg";
 import { LuClock4 } from "react-icons/lu";
 import { Link, useNavigate } from "react-router";
 
 const Footer = () => {
-  const navigate = useNavigate();
   return (
     <section className="bg-cw-secondary px-5 lg:px-0 mt-[40px] pt-[60px] lg:pt-[75px] pb-5 lg:pb-0">
       <div className="lg:flex lg:gap-x-[118px] lg:px-[104px] ">
@@ -22,12 +21,16 @@ const Footer = () => {
           <div className="mt-8 flex gap-x-5 justify-center lg:justify-start">
             <img src={facebook} alt="facebook logo" />
             <a
-              href="https://www.instagram.com/mouradzrl/?utm_source=ig_web_button_share_sheet"
+              className="p-[7px] border-1 border-white rounded-full"
+              href="https://www.instagram.com/carzewash/profilecard/?igsh=d3Q2Z2prMm1jZWx1"
               target="_"
             >
               <img src={instagram} alt="instagram logo" />
             </a>
-            <a href="https://wa.me/7 82 04 53 12">
+            <a
+              className="p-[7px] border-1 border-white rounded-full"
+              href="https://wa.me/7 82 04 53 12"
+            >
               <img src={whatsapp} alt="whatsapp logo" />
             </a>
           </div>

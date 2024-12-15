@@ -138,7 +138,7 @@ const Banner = ({ handleScrollToPricing }) => {
               />
             </div>
 
-            <div className="flex gap-y-6 justify-between md:justify-center lg:justify-normal md:gap-x-[18px] mt-3 lg:mt-0 md:mt-6 lg:w-full">
+            <div className="flex gap-y-6 justify-between md:justify-center lg:justify-normal md:gap-x-[16px] mt-3 lg:mt-0 md:mt-6 lg:w-full">
               {smallImages.map((image, index) => (
                 <img
                   key={index}

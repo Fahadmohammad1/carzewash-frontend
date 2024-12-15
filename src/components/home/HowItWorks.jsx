@@ -1,7 +1,7 @@
 import React from "react";
-import date from "../../assets/howItWorks/date.png";
-import car from "../../assets/howItWorks/car.png";
-import delivery from "../../assets/howItWorks/delivery.png";
+import date from "../../assets/howItWorks/date.svg";
+import car from "../../assets/howItWorks/car.svg";
+import delivery from "../../assets/howItWorks/delivery.svg";
 import Slider from "react-slick";
 import { motion } from "motion/react";
 import AOS from "aos";
@@ -74,11 +74,11 @@ const HowItWorks = () => {
               boxShadow: "0px 5px 30px 0px #3C98CC33",
             }}
             key={guide.id}
-            className="card w-full shadow-xl mt-8 px-6 py-8"
+            className="card w-full shadow-xl mt-8 px-6 py-8 group"
           >
             <div className="">
               <div className="bg-cw-primary p-[27px] rounded-full max-w-fit">
-                <img src={guide.icon} alt="" />
+                <img className="outline-white" src={guide.icon} alt="" />
               </div>
               <h2 className="font-black text-[28px] leading-[42px] mt-10 text-cw-primary">
                 {guide.title}

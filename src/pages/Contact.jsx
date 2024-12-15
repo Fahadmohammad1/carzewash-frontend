@@ -1,7 +1,7 @@
-import React from "react";
-import facebook from "../assets/footer/Facebook.png";
-import instagram from "../assets/footer/Instagram.png";
-import whatsapp from "../assets/footer/Whatsapp.png";
+import React, { useEffect } from "react";
+import facebook from "../assets/footer/Facebook.svg";
+import instagram from "../assets/footer/Instagram.svg";
+import whatsapp from "../assets/footer/Whatsapp.svg";
 import phone from "../assets/contact/phone.png";
 import mail from "../assets/contact/mail.png";
 import location from "../assets/contact/location.svg";
@@ -13,6 +13,7 @@ import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 import Loader from "../components/shared/Loader";
 import toast from "react-hot-toast";
+import { queryClient } from "../main";
 
 const Contact = () => {
   const { isPending, isSuccess, isError, mutate, error } = useMutation({
@@ -36,18 +37,21 @@ const Contact = () => {
     mutate({ name, phone, email, message });
   };
 
-  if (isPending) return <Loader />;
-  if (isSuccess) {
-    toast.success("Message sent successfully");
-    reset();
-  }
-  if (isError) {
-    toast.error("Failed to sent message, please try again");
-  }
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Message sent successfully");
+      reset();
+      queryClient.invalidateQueries("contacts");
+    }
+    if (isError) {
+      toast.error("Failed to send message, please try again");
+    }
+    if (error) {
+      toast.error(error.message);
+    }
+  }, [isSuccess, isError, error, reset]);
 
-  if (error) {
-    toast.error(error.message);
-  }
+  if (isPending) return <Loader />;
 
   return (
     <section className="md:px-10 lg:px-[104px]">

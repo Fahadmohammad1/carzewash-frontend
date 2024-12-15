@@ -108,7 +108,7 @@ const BookingForm = () => {
         className="px-5 md:px-8 py-8 flex flex-col gap-y-4 md:gap-y-6"
       >
         <div className="flex flex-col gap-y-4 lg:gap-y-0 lg:flex-row lg:gap-x-6">
-          <div>
+          <div className="lg:w-full">
             <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] md:px-5 lg:w-full">
               <img src={user} className="lg:w-[26px] opacity-40" alt="icon" />
               <input

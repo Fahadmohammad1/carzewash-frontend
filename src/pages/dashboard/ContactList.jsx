@@ -6,58 +6,67 @@ import axios from "axios";
 import user from "../../assets/dashboard/profile.svg";
 import message from "../../assets/dashboard/message.svg";
 import trash from "../../assets/dashboard/trash-2.svg";
+import { queryClient } from "../../main";
 
 const ContactList = () => {
   const { phone, email, password } = JSON.parse(localStorage.getItem("admin"));
-  const { isPending, isError, data, error } = useQuery({
+
+  // Fetch contacts
+  const {
+    isPending: getPending,
+    isError: isGetError,
+    data,
+    error: getError,
+  } = useQuery({
     queryKey: ["contacts"],
     queryFn: async () => {
       const res = await axios.get(
         `https://carzewash-backend.vercel.app/api/contact?phone=${phone}&email=${email}&password=${password}`
       );
-
       return res.data.data;
     },
   });
 
-  if (isPending) return <Loader />;
+  // Delete a contact
+  const {
+    mutate,
+    isPending: isDeletePending,
+    isSuccess: isDeleteSuccess,
+    isError: isDeleteError,
+    error: deleteError,
+  } = useMutation({
+    mutationFn: async (contactId) => {
+      return await axios.delete(
+        `https://carzewash-backend.vercel.app/api/contact/${contactId}?phone=${phone}&email=${email}&password=${password}`
+      );
+    },
+    onSuccess: () => {
+      toast.success("Message deleted successfully");
+      queryClient.invalidateQueries("contacts");
+    },
+    onError: (error) => {
+      toast.error(`Failed to delete message: ${error?.message}`);
+    },
+  });
 
-  if (error) {
-    toast.error(error.message);
-  }
-
-  // delete a contact message
-
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     const res = prompt("Are you sure? The message will be permanently deleted");
 
     if (res !== null) {
-      const { isPending, isSuccess, isError, error } = useMutation({
-        mutationFn: async () => {
-          return await axios.delete(
-            `https://carzewash-backend.vercel.app/api/contact/${id}`
-          );
-        },
-      });
-
-      if (isPending) return <Loader />;
-      if (isSuccess) {
-        toast.success("Message deleted successfully");
-        reset();
-      }
-      if (isError) {
-        toast.error("Failed to delete message, please try again");
-      }
-
-      if (error) {
-        toast.error(error.message);
-      }
+      mutate(id);
     }
   };
+
+  if (getPending || isDeletePending) return <Loader />;
+
+  if (getError) toast.error(getError?.message);
+
+  if (deleteError) toast.error(deleteError?.message);
+
   return (
     <section>
       <div className="bg-white">
-        <div className="p-6 pt-0 overflow-scroll">
+        <div className="p-6 pt-0 overflow-scroll rounded-lg">
           <table className="w-full min-w-max table-auto text-left ">
             <thead className="border-b font-cw-regular">
               <tr>

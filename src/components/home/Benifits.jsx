@@ -1,8 +1,8 @@
 import React from "react";
-import crown from "../../assets/benifits/crown.png";
-import smiley from "../../assets/benifits/smiley.png";
-import clock from "../../assets/benifits/clock.png";
-import location from "../../assets/benifits/location.png";
+import crown from "../../assets/benifits/crown.svg";
+import smiley from "../../assets/benifits/smiley.svg";
+import clock from "../../assets/benifits/clock.svg";
+import location from "../../assets/benifits/location.svg";
 
 const Benifits = () => {
   const benifits = [

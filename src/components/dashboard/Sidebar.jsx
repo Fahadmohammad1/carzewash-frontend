@@ -7,6 +7,7 @@ import arrow from "../../assets/arrow-icon.svg";
 import { CiUser } from "react-icons/ci";
 import UpdatePassModal from "./UpdatePassModal";
 import logout from "../../assets/logout.svg";
+import hand from "../../assets/dashboard/hand.png";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -21,7 +22,10 @@ const Sidebar = () => {
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         <div className="lg:h-[100px] lg:flex items-center justify-center border-b hidden">
-          <h3 className="font-normal text-[32px]">Hello, Mourad</h3>
+          <h3 className="font-normal text-[32px] font-cw-regular flex gap-x-1">
+            Hello, Mourad
+            <img className="size-8 mt-[6px]" src={hand} alt="hand icon" />
+          </h3>
         </div>
         <div className="lg:hidden">
           <div className="flex px-5 justify-between pt-[60px] pb-10">
@@ -81,13 +85,11 @@ const Sidebar = () => {
             <p className="bg-cw-primary px-[14px] py-[10px] font-cw-regular flex items-center gap-x-2 text-white max-w-fit border rounded-lg my-10">
               <CiUser className="text-lg" /> Users Booking
             </p>
-            <select
-              className="py-[10px] px-[14px] border rounded-lg bg-white outline-none text-cw-secondary text-opacity-60"
-              name=""
-              id=""
-            >
-              <option value="15">Latest 15 Bookings</option>
-            </select>
+            <label className="flex items-center gap-[10px] rounded-[10px] border-[2px] py-3 px-[18px] w-full md:px-5 md:w-full lg:w-[260px]">
+              <select className="border-0 w-full text-cw-secondary text-opacity-60 focus:outline-none bg-transparent">
+                <option defaultChecked>15 User's Booking</option>
+              </select>
+            </label>
           </div>
           <Outlet />
         </div>

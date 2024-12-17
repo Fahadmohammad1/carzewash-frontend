@@ -88,14 +88,6 @@ const BookingList = () => {
           <table className="w-full min-w-max table-auto text-left ">
             <thead className="border-b font-cw-regular">
               <tr>
-                <th>
-                  <input
-                    type="checkbox"
-                    name=""
-                    id=""
-                    className="appearance-none size-[20px] border border-[#000AFF] rounded-md mt-1"
-                  />
-                </th>
                 <th className="p-4 text-[#8A92A6]">
                   <p className="hidden lg:block antialiased font-sans text-sm font-normal">
                     Users
@@ -140,17 +132,9 @@ const BookingList = () => {
               </tr>
             </thead>
             <tbody>
-              {bookings.length &&
-                bookings?.map((booking) => (
-                  <tr key={booking.id}>
-                    <td>
-                      <input
-                        type="checkbox"
-                        name=""
-                        id=""
-                        className="appearance-none size-[20px] border border-[#000AFF] rounded-md mt-1"
-                      />
-                    </td>
+              {bookings?.length &&
+                bookings?.slice(0, 15)?.map((booking) => (
+                  <tr key={booking?.id}>
                     <td className="p-4 border-b border-[#EAECF0]">
                       <div className="flex items-center gap-3">
                         <img
@@ -160,35 +144,35 @@ const BookingList = () => {
                         />
                         <div className="flex flex-col">
                           <p className="font-cw-regular text-[15px] text-[#101828] ">
-                            {booking.fullName}
+                            {booking?.fullName}
                           </p>
                           <p className="font-cw-regular text-[14px] text-[#667085]">
-                            {booking.phone}
+                            {booking?.phone}
                           </p>
                         </div>
                       </div>
                     </td>
                     <td className="p-4 border-b border-[#EAECF0]">
                       <p className="font-cw-regular text-[15px] text-[#101828]">
-                        {booking.carModel}
+                        {booking?.carModel}
                       </p>
                     </td>
                     <td className="p-4 border-b border-[#EAECF0]">
                       <p className="font-cw-regular text-[15px] text-[#101828]">
-                        {booking.date}
+                        {booking?.date}
                       </p>
                       <p className="font-cw-regular text-[15px] text-[#101828] lg:hidden">
-                        {booking.time}
+                        {booking?.time}
                       </p>
                     </td>
                     <td className="p-4 border-b border-[#EAECF0] hidden lg:table-cell">
                       <p className="font-cw-regular text-[15px] text-[#101828]">
-                        {booking.time}
+                        {booking?.time}
                       </p>
                     </td>
                     <td className="p-4 border-b border-[#EAECF0]">
                       <p className="font-cw-regular text-[15px] text-[#101828]">
-                        {booking.formula}
+                        {booking?.formula}
                       </p>
                     </td>
                     <td className="p-4 border-b border-[#EAECF0]">

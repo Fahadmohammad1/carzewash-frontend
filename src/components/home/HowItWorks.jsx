@@ -1,9 +1,8 @@
 import React from "react";
 import date from "../../assets/howItWorks/date.svg";
-import car from "../../assets/howItWorks/car.svg";
 import delivery from "../../assets/howItWorks/delivery.svg";
+import car from "../../assets/howItWorks/car.svg";
 import Slider from "react-slick";
-import { motion } from "motion/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -41,16 +40,14 @@ const HowItWorks = () => {
         "Une fois le service terminé, vous payez et repartez avec une voiture éclatante.",
     },
   ];
+
   return (
     <section className="mt-[60px] lg:mt-[120px]">
-      <motion.h1
-        style={{ overflow: "hidden", whiteSpace: "nowrap" }}
-        variants={{ hidden: { width: 0 }, visible: { width: "100%" } }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        transition={{ duration: 2, ease: "easeInOut" }}
-        className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center p-8 lg:p-0 md:px-20 lg:text-start lg:text-[52px] lg:leading-[80px] font-cw-primary tracking-wide "
+      <h1
+        data-aos="fade-right"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+        className="font-black text-[28px] md:text-4xl leading-[42px] md:leading-[52px] text-center p-8 lg:p-0 md:px-20 lg:text-start lg:text-[52px] lg:leading-[80px] font-cw-primary tracking-wide"
       >
         <span className="text-cw-secondary text-wrap lg:text-nowrap">
           Comment ça fonctionne pour
@@ -59,7 +56,7 @@ const HowItWorks = () => {
         <span className="text-cw-primary text-wrap lg:text-nowrap">
           faire briller la voiture
         </span>
-      </motion.h1>
+      </h1>
       <p className="text-center leading-6 md:px-28 lg:text-start lg:px-0 tracking-wide font-cw-regular lg:w-[490px] opacity-70">
         Découvrez notre processus simple et efficace pour redonner à votre
         voiture tout son éclat.
@@ -74,16 +71,18 @@ const HowItWorks = () => {
               boxShadow: "0px 5px 30px 0px #3C98CC33",
             }}
             key={guide.id}
-            className="card w-full shadow-xl mt-8 px-6 py-8 group"
+            className="card w-full shadow-xl mt-8 px-6 py-8 group hover:bg-cw-primary"
           >
             <div className="">
-              <div className="bg-cw-primary p-[27px] rounded-full max-w-fit">
-                <img className="outline-white" src={guide.icon} alt="" />
+              <div className="bg-cw-primary p-[27px] rounded-full max-w-fit group-hover:bg-cw-secondary">
+                <img className="" src={guide.icon} alt="" />
               </div>
-              <h2 className="font-black text-[28px] leading-[42px] mt-10 text-cw-primary">
+              <h2 className="font-black text-[28px] leading-[42px] mt-10 text-cw-primary group-hover:text-white">
                 {guide.title}
               </h2>
-              <p className="leading-6 text-base">{guide.description}</p>
+              <p className="leading-6 text-base group-hover:text-white">
+                {guide.description}
+              </p>
             </div>
           </div>
         ))}

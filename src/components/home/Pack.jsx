@@ -28,7 +28,7 @@ const Pack = ({ p }) => {
         </h3>
         <p className="leading-6 text-base opacity-50">{p.type}</p>
         <p className="mt-8 mb-16 text-[64px] leading-[68px] font-black text-cw-primary group-hover:text-white">
-          {p.price}€
+          {p.price} €
         </p>
       </div>
       <div className="flex flex-col gap-y-4 lg:mb-[60px]">

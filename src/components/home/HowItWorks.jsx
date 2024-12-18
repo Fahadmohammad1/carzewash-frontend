@@ -1,7 +1,4 @@
 import React from "react";
-import date from "../../assets/howItWorks/date.svg";
-import delivery from "../../assets/howItWorks/delivery.svg";
-import car from "../../assets/howItWorks/car.svg";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
